@@ -9,4 +9,5 @@
     <string name="login_text">התחבר</string>
     <string name="member_text">משתמש קיים?</string>
     <string name="click_here_btn">לחץ כאן</string>
+    <string name="reg_text">הרשמה</string>
 </resources>

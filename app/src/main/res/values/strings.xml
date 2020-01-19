@@ -8,4 +8,5 @@
     <string name="login_text">Log in</string>
     <string name="member_text">Already a member?</string>
     <string name="click_here_btn">Click here</string>
+    <string name="reg_text">Register</string>
 </resources>

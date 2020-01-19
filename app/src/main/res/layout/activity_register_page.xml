@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="@string/reg_text"
             android:textSize="20dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
@@ -45,7 +45,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/edit_text_style"
-            android:hint="Enter Your Email"
+            android:hint="@string/mail_txt"
             android:inputType="textEmailAddress"
             android:paddingLeft="10dp" />
 
@@ -55,10 +55,10 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:background="@drawable/edit_text_style"
-
-            android:hint="Enter Password"
+            android:hint="@string/pass_txt"
             android:inputType="textPassword"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            />
 
     </LinearLayout>
 
@@ -77,7 +77,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/shape_selector"
-                android:text="Register"
+                android:text="@string/reg_btn"
                 android:layout_gravity="center"
                 android:textAllCaps="false" />
 
