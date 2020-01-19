@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">GymProject</string>
-    <string name="reg_btn">Register</string>
+    <string name="reg_btn">Create a new account</string>
     <string name="mail_txt">Enter your mail</string>
     <string name="pass_txt">Enter your password</string>
     <string name="login_btn">Login</string>
+    <string name="or_text">OR</string>
+    <string name="login_text">Log in</string>
 </resources>

@@ -9,51 +9,91 @@
         android:layout_height="0dp"
         android:layout_weight="8"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="bottom"
+        >
+
+<ImageButton
+    android:layout_width="180dp"
+    android:layout_height="50dp"
+    android:id="@+id/google_btn"
+    android:background="@drawable/google_btn"
+    android:layout_gravity="center"
+
+    />
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/mail_txt"
-        android:gravity="center"
-        android:id="@+id/mailTxt"
-        />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/pass_txt"
-        android:gravity="center"
-        android:id="@+id/passTxt"
-       />
+        
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mail_txt"
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            android:id="@+id/mailTxt"
+            />
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="@drawable/shape_selector"
-        android:text="@string/login_btn"
-        />
+        <EditText
+            android:id="@+id/passTxt"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/pass_txt" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+
+            android:background="@drawable/shape_selector"
+            android:text="@string/login_btn"
+            />
 
 
-</LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:gravity="bottom"
+        android:orientation="vertical"
         >
 
+
+
+      <TextView
+          android:layout_width="150dp"
+          android:layout_height="wrap_content"
+          android:text="Already have account?"
+          android:gravity="bottom"
+          android:layout_gravity="bottom"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="20dp"
+          android:layout_marginLeft="20dp"
+          />
+
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/regBtn"
+
+            android:layout_gravity="right "
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
             android:text="@string/reg_btn"
-            android:background="@drawable/shape_selector"
+            android:background="#fff"
             />
+
+
+
+
+
+
+
 
     </LinearLayout>
 
