@@ -11,8 +11,11 @@
 
         android:dashGap="10dp"
         />
-<solid
-    android:color="#FCDC94"/>
+    <gradient
+        android:type="linear"
+        android:startColor="@color/colorPrimary"
+        android:endColor="@color/colorPrimaryDark"
+        android:angle="45"/>
 
     <corners
         android:radius="80dp"/>
