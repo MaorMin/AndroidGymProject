@@ -1,22 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-            android:text="@string/reg_btn"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/shpe_selector"
+        android:hint="@string/mail_txt"
+        android:gravity="center"
+        android:id="@+id/mailTxt"
         />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pass_txt"
+        android:gravity="center"
+        android:id="@+id/passTxt"
+       />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/shape_selector"
+        android:text="@string/login_btn"
+        />
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="bottom"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/regBtn"
+            android:text="@string/reg_btn"
+            android:background="@drawable/shape_selector"
+            />
+
+    </LinearLayout>
 
 
 
 </LinearLayout>
+

@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">GymProject</string>
     <string name="reg_btn">הרשמה</string>
+    <string name="mail_txt">הכנס אימייל</string>
+    <string name="pass_txt">הכנס סיסמה</string>
+    <string name="login_btn">התחבר</string>
 </resources>
