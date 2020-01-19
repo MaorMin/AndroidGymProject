@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GymProject</string>
+    <string name="reg_btn">Register</string>
 </resources>
