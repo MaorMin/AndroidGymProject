@@ -14,4 +14,13 @@
     <string name="first_name">הכנס שם פרטי</string>
     <string name="last_name">הכנס שם משפחה</string>
     <string name="repeat_pass">חזור שוב על הסיסמה</string>
+    <string name="new_member">משתמש חדש?</string>
+    <string name="my_details_text">הפרטים שלי</string>
+    <string name="age_text">הכנס את הגיל שלך</string>
+    <string name="height_text">הכנס את הגובה שלך</string>
+    <string name="gender_text">בחר את המין שלך</string>
+    <string name="weight_text">הכנס את המשקל שלך</string>
+    <string name="finish_btn">סיום</string>
+    <string name="male_text">זכר</string>
+    <string name="female_text">נקבה</string>
 </resources>

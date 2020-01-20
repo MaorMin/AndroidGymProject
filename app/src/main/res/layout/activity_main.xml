@@ -158,12 +158,12 @@
 
         <ImageButton
             android:id="@+id/googleBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:background="@drawable/google_icon"
+            android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"/>
+            android:background="@drawable/google_icon" />
 
         <ImageButton
             android:id="@+id/fbBtn"
@@ -188,7 +188,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/member_text"
+            android:text="@string/new_member"
             android:gravity="bottom"/>
 
 

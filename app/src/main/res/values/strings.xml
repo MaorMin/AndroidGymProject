@@ -13,4 +13,13 @@
     <string name="last_name">Enter your last name</string>
     <string name="repeat_pass">Repeat your password</string>
     <string name="forgot_pass">Forgot password?</string>
+    <string name="new_member">New member?</string>
+    <string name="my_details_text">My details</string>
+    <string name="age_text">Enter your age</string>
+    <string name="height_text">Enter your height</string>
+    <string name="gender_text">Select your gender</string>
+    <string name="weight_text">Enter your weight</string>
+    <string name="finish_btn">Finish</string>
+    <string name="male_text">Male</string>
+    <string name="female_text">Female</string>
 </resources>
