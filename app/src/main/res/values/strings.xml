@@ -9,4 +9,5 @@
     <string name="click_here_btn">Click here</string>
     <string name="reg_text">Register</string>
     <string name="pas_txt">Enter your password</string>
+    <string name="forgot_pass">Forgot password?</string>
 </resources>

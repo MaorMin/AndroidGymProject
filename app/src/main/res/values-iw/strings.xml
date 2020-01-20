@@ -10,4 +10,5 @@
     <string name="click_here_btn">לחץ כאן</string>
     <string name="reg_text">הרשמה</string>
     <string name="pas_txt">הכנס סיסמה</string>
+    <string name="forgot_pass">שכחת סיסמה?</string>
 </resources>
