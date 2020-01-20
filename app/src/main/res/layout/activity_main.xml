@@ -32,10 +32,15 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
         <EditText
             android:layout_weight="0"
             android:hint="@string/mail_txt"
-            android:gravity="center"
+
             android:inputType="textEmailAddress"
             android:id="@+id/mailTxt"
             android:layout_width="match_parent"
@@ -44,19 +49,47 @@
             android:layout_marginLeft="30dp"
             android:background="@drawable/edit_text_style"
             android:layout_marginBottom="20dp"
-            />
+            android:paddingLeft="10dp"
 
+            />
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="42dp"
+                android:layout_marginRight="42dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/mail_icon"/>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <EditText
             android:id="@+id/passTxt"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:hint="@string/pass_txt"
+            android:hint="@string/pas_txt"
             android:layout_height="40dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:background="@drawable/edit_text_style"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="10dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:src="@drawable/locker_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
     </LinearLayout>
 
         <Button
@@ -97,6 +130,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:background="@drawable/google_icon"
+                android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"/>
 
             <ImageButton
@@ -104,6 +138,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:background="@drawable/fb_icon"
                 />

@@ -2,11 +2,11 @@
     <string name="app_name">GymProject</string>
     <string name="reg_btn">Create a new account</string>
     <string name="mail_txt">Enter your mail</string>
-    <string name="pass_txt">Enter your password</string>
     <string name="login_btn">Login</string>
     <string name="or_text">OR</string>
     <string name="login_text">Log in</string>
     <string name="member_text">Already a member?</string>
     <string name="click_here_btn">Click here</string>
     <string name="reg_text">Register</string>
+    <string name="pas_txt">Enter your password</string>
 </resources>
