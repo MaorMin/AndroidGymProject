@@ -40,21 +40,86 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:gravity="center|start">
 
             <EditText
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginBottom="15dp"
+                android:inputType="textPersonName"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/first_name"
+                />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:src="@drawable/last_name_icon"
+                android:layout_toEndOf="@+id/passTxt"
+                android:layout_toRightOf="@+id/passTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="8dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|start">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:inputType="textPersonName"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/last_name"
+                />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:src="@drawable/last_name_icon"
+                android:layout_toEndOf="@+id/passTxt"
+                android:layout_toRightOf="@+id/passTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="8dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/edit_text_style"
                 android:hint="@string/mail_txt"
                 android:inputType="textEmailAddress"
-                android:paddingLeft="10dp"
- android:paddingStart="10dp"
-            />
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp" />
 
             <ImageView
                 android:layout_width="13dp"
@@ -67,7 +132,6 @@
                 android:layout_marginTop="12dp">
             </ImageView>
 
-
         </RelativeLayout>
 
         <RelativeLayout
@@ -78,16 +142,48 @@
             <EditText
                 android:id="@+id/edit_text"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:inputType="textPassword"
                 android:paddingStart="10dp"
                 android:paddingLeft="10dp"
                 android:background="@drawable/edit_text_style"
                 android:hint="@string/pas_txt"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="30dp"
 
+                android:src="@drawable/locker_icon"
+                android:layout_toEndOf="@+id/passTxt"
+                android:layout_toRightOf="@+id/passTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="5dp"
 
+                />
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|start">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/repeat_pass"
                 />
 
             <ImageView
@@ -106,6 +202,8 @@
                 />
         </RelativeLayout>
 
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -118,12 +216,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/shape_selector"
             android:text="@string/reg_btn"
-            android:layout_gravity="center"
             android:textAllCaps="false" />
 
         <LinearLayout

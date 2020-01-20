@@ -11,4 +11,7 @@
     <string name="reg_text">הרשמה</string>
     <string name="pas_txt">הכנס סיסמה</string>
     <string name="forgot_pass">שכחת סיסמה?</string>
+    <string name="first_name">הכנס שם פרטי</string>
+    <string name="last_name">הכנס שם משפחה</string>
+    <string name="repeat_pass">חזור שוב על הסיסמה</string>
 </resources>
