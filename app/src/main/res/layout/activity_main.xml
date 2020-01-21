@@ -130,6 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:background="@drawable/shape_selector"
+        android:textColor="@android:color/white"
         android:text="@string/login_btn"
         android:textAllCaps="false"
         android:layout_marginRight="30dp"

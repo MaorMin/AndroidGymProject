@@ -140,17 +140,19 @@
             android:gravity="center|start">
 
             <EditText
-                android:id="@+id/edit_text"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
-                android:layout_marginBottom="10dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/edit_text_style"
+                android:gravity="end"
                 android:hint="@string/pas_txt"
-                />
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp" />
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="30dp"
@@ -174,6 +176,7 @@
             android:gravity="center|start">
 
             <EditText
+                android:id="@+id/rep_pass"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="30dp"
@@ -182,7 +185,8 @@
                 android:paddingLeft="10dp"
                 android:background="@drawable/edit_text_style"
                 android:hint="@string/repeat_pass"
-                android:gravity="start"
+                android:gravity="end"
+                android:inputType="textPassword"
                 />
 
             <ImageView
@@ -216,6 +220,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="@android:color/white"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="16dp"
