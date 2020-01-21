@@ -2,25 +2,26 @@
 <resources>
     <string name="app_name">GymProject</string>
     <string name="reg_btn">הרשמה</string>
-    <string name="mail_txt">הכנס אימייל</string>
-    <string name="login_btn">התחבר</string>
+    <string name="mail_txt">הכנס/י אימייל</string>
+    <string name="login_btn">התחבר/י</string>
     <string name="or_text">או</string>
     <string name="login_text">התחברות</string>
     <string name="member_text">משתמש קיים?</string>
     <string name="click_here_btn">לחץ כאן</string>
     <string name="reg_text">הרשמה</string>
-    <string name="pas_txt">הכנס סיסמה</string>
+    <string name="pas_txt">הכנס/י סיסמה</string>
     <string name="forgot_pass">שכחת סיסמה?</string>
-    <string name="first_name">הכנס שם פרטי</string>
-    <string name="last_name">הכנס שם משפחה</string>
+    <string name="first_name">הכנס/י שם פרטי</string>
+    <string name="last_name">הכנס/י שם משפחה</string>
     <string name="repeat_pass">חזור שוב על הסיסמה</string>
     <string name="new_member">משתמש חדש?</string>
     <string name="my_details_text">הפרטים שלי</string>
-    <string name="age_text">הכנס את הגיל שלך</string>
-    <string name="height_text">הכנס את הגובה שלך</string>
-    <string name="gender_text">בחר את המין שלך</string>
-    <string name="weight_text">הכנס את המשקל שלך</string>
+    <string name="age_text">הכנס/י את הגיל שלך</string>
+    <string name="height_text">הכנס/י את הגובה שלך</string>
+    <string name="gender_text">בחר/י את המין שלך</string>
+    <string name="weight_text">הכנס/י את המשקל שלך</string>
     <string name="finish_btn">סיום</string>
     <string name="male_text">זכר</string>
     <string name="female_text">נקבה</string>
+    <string name="body_fat">הכנס/י אחוזי שומן</string>
 </resources>

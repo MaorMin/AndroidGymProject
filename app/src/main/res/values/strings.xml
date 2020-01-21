@@ -22,4 +22,5 @@
     <string name="finish_btn">Finish</string>
     <string name="male_text">Male</string>
     <string name="female_text">Female</string>
+    <string name="body_fat">Enter percent body fat</string>
 </resources>

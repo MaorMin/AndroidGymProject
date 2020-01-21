@@ -38,64 +38,66 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="2">
-
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
 
+            android:layout_weight="2">
 
-            <TextView
-                android:layout_marginBottom="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="30dp"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                android:text="@string/gender_text"
-                />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="0dp"
+                    android:inputType="textPersonName"
+                    android:paddingStart="10dp"
+                    android:paddingLeft="10dp"
+
+                    android:text="@string/gender_text" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <ImageButton
+                        android:id="@+id/maleIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/male_icon_new"
+                        android:tooltipText="@string/female_text"
+                        android:layout_marginRight="20dp"
 
 
-                <ImageButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/male_icon"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginEnd="20dp"
-                    android:id="@+id/maleIcon" />
+                        />
 
 
-
-                <ImageButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginRight="20dp"
-
-                    android:background="@drawable/female_icon"
-
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/female_icon_new"
+                        android:id="@+id/femaleBtn"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        />
                     />
+                </RelativeLayout>
 
+            </LinearLayout>
 
-            </RelativeLayout>
 
         </LinearLayout>
-
-
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -142,7 +144,8 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center|start">
+            android:gravity="center|start"
+            >
 
             <EditText
                 android:id="@+id/edit_text"
@@ -168,6 +171,19 @@
         android:layout_weight="3"
         android:orientation="vertical"
         android:gravity="bottom">
+
+        <EditText
+            android:id="@+id/body_fat_text"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="47dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/body_fat"/>
 
         <Button
             android:layout_width="match_parent"
