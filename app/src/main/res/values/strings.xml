@@ -31,4 +31,9 @@
     <string name="profile_name">Profile Name</string>
     <string name="profile_email">Email</string>
     <string name="fb_login_protocol_scheme">fb174059530511142</string>
+    <string name="my_progress">My progress</string>
+    <string name="my_weight">"My current weight is: "</string>
+    <string name="creating_fat_percentages">Creating fat percentages</string>
+    <string name="neck_circumference">Enter neck circumference</string>
+    <string name="extent_of_waist">Enter extent of waist</string>
 </resources>
