@@ -30,5 +30,6 @@
     <string name="login_fb_btn">Login</string>
     <string name="profile_name">Profile Name</string>
     <string name="profile_email">Email</string>
+    <string name="exe_top">Choose exercise</string>
     <string name="fb_login_protocol_scheme">fb174059530511142</string>
 </resources>
