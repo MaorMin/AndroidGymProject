@@ -105,8 +105,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
-        Intent intent = new Intent(MainActivity.this, DetailsPage.class);
-        startActivity(intent);
+        if(resultCode != 0) {
+            Intent intent = new Intent(MainActivity.this, DetailsPage.class);
+            startActivity(intent);
+        }
     }
 
     AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
