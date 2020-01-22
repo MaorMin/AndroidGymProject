@@ -27,31 +27,32 @@ public class ForgotPasswordPage extends AppCompatActivity {
         recoverPassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText.getText().toString() != null) {
+                if (editText.getText().toString() != "") {
                     CharSequence text = "Your password sent to the email!";
-                    int duration = Toast.LENGTH_SHORT;
+                    int duration = Toast.LENGTH_LONG;
                     Toast toast = Toast.makeText(ForgotPasswordPage.this, text, duration);
                     toast.show();
-
+                    // timeSleep();
                     Intent intent = new Intent(ForgotPasswordPage.this, MainActivity.class);
                     startActivity(intent);
                 }
             }
         });
     }
-
-    public void timeSleep() throws InterruptedException {
-        try {
-            TimeUnit.SECONDS.sleep(6);
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            throw new InterruptedException();
-        }
-        {
-
-
-
-        }
-    }
 }
+//
+//    public void timeSleep()  {
+//        try {
+////            TimeUnit.SECONDS.sleep(6);
+//            Thread.sleep(200);
+//        } catch (InterruptedException e) {
+//            e.fillInStackTrace();
+//        }
+//        {
+
+
+
+//        }
+//    }
+//}
 

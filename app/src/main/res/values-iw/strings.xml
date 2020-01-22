@@ -27,8 +27,6 @@
     <string name="pass_recover_text">שיחזור סיסמה</string>
     <string name="recover_my_pass_btn">שחזר את הסיסמה שלי</string>
     <string name="pass_recovery_mail">הסיסמה שלך נשלחה למייל</string>
-
-
     <string name="fb_login_protocol_scheme">translatable="false">IMAP</string>
     <string name="login_fb_btn">התחבר/י</string>
     <string name="profile_name">פרופיל</string>
