@@ -34,8 +34,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        android:gravity="center"
+        android:layout_weight="9"
+        android:gravity="center_vertical"
         android:orientation="vertical">
 
 
@@ -62,7 +62,7 @@
             android:textColor="@android:color/white"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="16dp"
+
 
             android:background="@drawable/shape_selector"
             android:text="@string/recover_my_pass_btn"
