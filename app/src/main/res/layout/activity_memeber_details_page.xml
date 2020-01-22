@@ -194,7 +194,8 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/shape_selector"
             android:text="@string/finish_btn"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:id="@+id/finish_details_btn"/>
 
     </LinearLayout>
 

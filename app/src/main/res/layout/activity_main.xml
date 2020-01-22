@@ -117,6 +117,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/forgot_pass"
                 android:textAllCaps="false"
+                android:id="@+id/forgot_pass_btn"
 
                 />
 
@@ -155,25 +156,34 @@
         android:gravity="bottom|center"
 
         >
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+        android:id="@+id/profile_email"
+    android:layout_gravity="center"
+    android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp" />
 
 
-        <ImageButton
-            android:id="@+id/googleBtn"
+        <de.hdodenhof.circleimageview.CircleImageView
+    android:layout_width="0dp"
+        android:layout_height="0dp"
+    android:id="@+id/profile_picFb"/>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/loginFbBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="@drawable/google_icon" />
-
-        <ImageButton
-            android:id="@+id/fbBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:background="@drawable/fb_icon"
+            android:layout_marginBottom="30dp"
             />
 
     </LinearLayout>

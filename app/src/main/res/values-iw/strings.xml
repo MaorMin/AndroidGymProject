@@ -24,4 +24,14 @@
     <string name="male_text">זכר</string>
     <string name="female_text">נקבה</string>
     <string name="body_fat">הכנס/י אחוזי שומן</string>
+    <string name="pass_recover_text">שיחזור סיסמה</string>
+    <string name="recover_my_pass_btn">שחזר את הסיסמה שלי</string>
+    <string name="pass_recovery_mail">הסיסמה שלך נשלחה למייל</string>
+
+
+    <string name="fb_login_protocol_scheme">translatable="false">IMAP</string>
+    <string name="login_fb_btn">התחבר/י</string>
+    <string name="profile_name">פרופיל</string>
+    <string name="profile_email">אימייל</string>
+    <string name="facebook_app_id">174059530511142</string>
 </resources>

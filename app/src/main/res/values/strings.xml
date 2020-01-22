@@ -23,4 +23,12 @@
     <string name="male_text">Male</string>
     <string name="female_text">Female</string>
     <string name="body_fat">Enter percent body fat</string>
+    <string name="pass_recover_text">Password recover</string>
+    <string name="recover_my_pass_btn">Recover my password</string>
+    <string name="pass_recovery_mail">Your password sent to mail</string>
+    <string name="facebook_app_id">174059530511142</string>
+    <string name="login_fb_btn">Login</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="profile_email">Email</string>
+    <string name="fb_login_protocol_scheme">fb174059530511142</string>
 </resources>
