@@ -32,6 +32,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainActivity extends AppCompatActivity {
 
     private LoginButton loginButton;
+    private CircleImageView circleImageView;
+    private TextView txtName, txtEmail;
 
 
     private CallbackManager callbackManager;
@@ -44,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         loginButton = findViewById(R.id.loginFbBtn);
-
+        //circleImageView = findViewById(R.id.profile_picFb);
         callbackManager = CallbackManager.Factory.create();
 
-
+        //txtEmail = findViewById(R.id.profile_email);
+       // txtName = findViewById(R.id.profile_name);
 
         loginButton.setReadPermissions(Arrays.asList("email", "public_profile"));
 
@@ -112,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
             if (currentAccessToken == null) {
-
+                txtName.setText("");
+                txtEmail.setText("");
                 Toast.makeText(MainActivity.this, "User logged out", Toast.LENGTH_LONG).show();
             } else {
 
@@ -131,7 +135,8 @@ public class MainActivity extends AppCompatActivity {
                     String email = object.getString("email");
 
 
-
+                    //txtEmail.setText(email);
+                    //txtName.setText(first_name);
                     RequestOptions requestOptions = new RequestOptions();
                     requestOptions.dontAnimate();
 
