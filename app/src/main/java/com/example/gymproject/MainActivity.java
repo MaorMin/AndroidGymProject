@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+        Intent intent = new Intent(MainActivity.this, DetailsPage.class);
+        startActivity(intent);
     }
 
     AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
@@ -114,8 +116,11 @@ public class MainActivity extends AppCompatActivity {
                 txtName.setText("");
                 txtEmail.setText("");
                 Toast.makeText(MainActivity.this, "User logged out", Toast.LENGTH_LONG).show();
-            } else
+            } else {
+
                 loadUserProfile(currentAccessToken);
+
+            }
         }
     };
 
@@ -132,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
                     txtName.setText(first_name);
                     RequestOptions requestOptions = new RequestOptions();
                     requestOptions.dontAnimate();
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
