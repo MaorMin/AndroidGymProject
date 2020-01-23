@@ -32,9 +32,5 @@
     <string name="profile_name">פרופיל</string>
     <string name="profile_email">אימייל</string>
     <string name="facebook_app_id">174059530511142</string>
-    <string name="my_progress">ההתקדמות שלי</string>
-    <string name="my_weight">"המשקל הנוכחי שלי "</string>
-    <string name="creating_fat_percentages">יצרת אחוזי שומן</string>
-    <string name="neck_circumference">הכנס/י היקף צוואר</string>
-    <string name="extent_of_waist">הכנס/י היקף מותן</string>
+    <string name="exe_top">בחר תרגיל</string>
 </resources>
