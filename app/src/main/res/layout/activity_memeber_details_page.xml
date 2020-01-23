@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginBottom="30dp"
+            android:gravity="center"
             >
 
 
@@ -53,7 +54,7 @@
                 android:text="@string/gender_text" />
 
             <LinearLayout
-                android:layout_width="68dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp">
 
@@ -62,14 +63,15 @@
                     android:id="@+id/maleIcon"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:background="@drawable/male_icon_new" />
+                   android:layout_gravity="center|right"
+                    android:background="@drawable/male_icon_new"
+                    />
 
                 <ImageButton
                     android:id="@+id/femaleBtn"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"
-
-
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|left"
                     android:background="@drawable/female_icon_new" />
             </LinearLayout>
         </LinearLayout>
