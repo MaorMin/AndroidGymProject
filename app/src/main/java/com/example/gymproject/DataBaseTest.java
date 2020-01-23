@@ -1,6 +1,9 @@
 package com.example.gymproject;
 
-public class DataBaseTest {
+import android.widget.TextView;
+
+public class DataBaseTest extends MainActivity{
+
 
 
 }

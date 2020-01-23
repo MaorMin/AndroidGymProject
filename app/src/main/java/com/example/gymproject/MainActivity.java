@@ -6,12 +6,14 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.request.RequestOptions;
 import com.facebook.AccessToken;
@@ -30,6 +32,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+//import androidx.recyclerview.widget;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,17 +47,27 @@ import java.util.Arrays;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ValueEventListener {
 
 
     private LoginButton loginButton;
     private CircleImageView circleImageView;
     private TextView txtName, txtEmail;
-
+    private EditText firstName;
+    private EditText lastName;
+    private EditText email;
+    private EditText passEnter;
+    private EditText passEnterRep;
+    private TextView databaseText;
 
     private CallbackManager callbackManager;
     private static String TAG = "Facebook login";
     private FirebaseAuth mAuth;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mRootRefference =firebaseDatabase.getReference();
+    private DatabaseReference mHeadingReference = mRootRefference.child("LoginPage");
+    private DatabaseReference emailLogin = mRootRefference.child("email");
+    private DatabaseReference passwordLogin = mRootRefference.child("password");
 
 
 
@@ -57,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        email = (EditText)findViewById(R.id.mailTxt);
+        passEnter = (EditText)findViewById(R.id.passTxt);
+      //  email = (EditText)findViewById(R.id.email_register);
+      //  passEnter = (EditText)findViewById(R.id.pass_register);
+       // passEnterRep  = (EditText)findViewById(R.id.rep_pass_register);
+        databaseText = (TextView)findViewById(R.id.test_database);
 
         //--------Firebase login---//
         // Initialize Facebook Login button
@@ -87,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
 // ...
 
 
+
+
 //---fb
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
@@ -109,17 +136,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
         Button loginBtn = findViewById(R.id.loginBtn);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String heading ="Login Page";
+                mHeadingReference.setValue(heading);
+                String userName = email.getText().toString();
+                emailLogin.setValue(userName);
+                String pass = passEnter.getText().toString();
+                passwordLogin.setValue(pass);
+
                 Intent intent = new Intent(MainActivity.this, DetailsPage.class);
                 startActivity(intent);
 
 
             }
         });
+
 
         Button forgotPassBtn = findViewById(R.id.forgot_pass_btn);
 
@@ -130,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
 
     }
 
@@ -190,6 +231,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
+
+        mHeadingReference.addValueEventListener(this);
+        emailLogin.addValueEventListener(this);
+        passwordLogin.addValueEventListener(this);
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser;
         currentUser = mAuth.getCurrentUser();
@@ -223,6 +268,8 @@ public class MainActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+
+
     }
 
 
@@ -234,6 +281,36 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+    if(dataSnapshot.getValue(String.class)!=null){
+        String key = dataSnapshot.getKey();
+        if(key.equals("maor")){
+            String heading =dataSnapshot.getValue(String.class);
+            databaseText.setText(heading);
+            Intent intent =new Intent(MainActivity.this,DataBaseTest.class);
+        }
+        else if(key.equals("minyan"))
+        {
+            String color = dataSnapshot.getValue(String.class);
+           databaseText.setText(color);
+        }
+    }
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+    }
+
+
+//    public void submitHeading(View view){
+//        String heading = firstName.getText().toString();
+//        mHeadingReference.setValue(heading);
+//
+//        mHeadingReference.setValue("m");
+//    }
 
 }
 

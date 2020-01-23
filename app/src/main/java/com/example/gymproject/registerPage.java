@@ -13,11 +13,10 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class registerPage extends AppCompatActivity {
+public class registerPage extends AppCompatActivity{
 
     EditText pass;
     EditText repPass;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,8 @@ public class registerPage extends AppCompatActivity {
         registerBtnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 CharSequence text = "Your register has complete successfully!";
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(registerPage.this, text, duration);
@@ -50,8 +51,8 @@ public class registerPage extends AppCompatActivity {
         });
 
 
-        pass = findViewById(R.id.pass);
-        repPass = findViewById(R.id.rep_pass);
+        pass = findViewById(R.id.pass_register);
+        repPass = findViewById(R.id.rep_pass_register);
         lngCheck();
     }
 
