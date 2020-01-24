@@ -37,4 +37,5 @@
     <string name="creating_fat_percentages">Creating fat percentages</string>
     <string name="neck_circumference">Enter neck circumference</string>
     <string name="extent_of_waist">Enter extent of waist</string>
+    <string name="successful_register">The register succssesfulled</string>
 </resources>
