@@ -1,7 +1,6 @@
 package com.example.gymproject;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 
 
@@ -54,15 +53,7 @@ public class registerPage extends MainActivity{
         registerBtnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-             //   CharSequence text = "Your register has complete successfully!";
-              //  int duration = Toast.LENGTH_SHORT;
-             //   Toast toast = Toast.makeText(registerPage.this, text, duration);
-              //  toast.show();
                 registerUser();
-                //Intent intent = new Intent(registerPage.this, MainActivity.class);
-                //startActivity(intent);
             }
         });
 
@@ -76,25 +67,20 @@ public class registerPage extends MainActivity{
             }
         });
 
-
-
-        pass = findViewById(R.id.pass_register);
-        repPass = findViewById(R.id.rep_pass_register);
         lngCheck();
     }
-
 
 
     public void lngCheck(){
         String lng = Locale.getDefault().getDisplayLanguage();
 
         if (lng.equals("English")){
-            pass.setGravity(GravityCompat.START);
-            repPass.setGravity(GravityCompat.START);
+            editTextPassRegister.setGravity(GravityCompat.START);
+            editTextRepPasswordRegister.setGravity(GravityCompat.START);
         }
         else{
-            pass.setGravity(GravityCompat.END);
-            repPass.setGravity(GravityCompat.END);
+            editTextPassRegister.setGravity(GravityCompat.END);
+            editTextRepPasswordRegister.setGravity(GravityCompat.END);
         }
     }
 
@@ -178,10 +164,6 @@ public class registerPage extends MainActivity{
                                         Intent intent = new Intent(registerPage.this, DetailsPage.class);
                                         startActivity(intent);
                                     }
-                                    else{
-
-                                    }
-
                                 }
                             });
 
