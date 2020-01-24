@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,7 @@ public class registerPage extends MainActivity{
     private EditText editTextEmailRegister;
     private EditText editTextPassRegister;
     private EditText editTextRepPasswordRegister;
+    private ProgressBar progressBar;
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -46,13 +48,15 @@ public class registerPage extends MainActivity{
         editTextEmailRegister = findViewById(R.id.email_register);
         editTextPassRegister =  findViewById(R.id.pass_register);
         editTextRepPasswordRegister = findViewById(R.id.rep_pass_register);
+        progressBar = findViewById(R.id.progress_bar_reg_btn);
 
         Button registerBtnEnd = findViewById(R.id.reg_btn_end);
 
-
+        progressBar.setVisibility(View.GONE);
         registerBtnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 registerUser();
             }
         });
@@ -107,13 +111,13 @@ public class registerPage extends MainActivity{
 
 
         if(firstName.isEmpty()){
-            editTextEmailRegister.setError("First name required");
-            editTextEmailRegister.requestFocus();
+            editTextfirstNameRegister.setError("First name required");
+            editTextfirstNameRegister.requestFocus();
             return;
         }
         if(lastName.isEmpty()){
-            editTextEmailRegister.setError("Last name required");
-            editTextEmailRegister.requestFocus();
+            editTextlastNameRegister.setError("Last name required");
+            editTextlastNameRegister.requestFocus();
             return;
         }
 
@@ -136,8 +140,8 @@ public class registerPage extends MainActivity{
         }
 
         if (rePass.length() < 6) {
-            editTextPassRegister.setError("Password should be at least 6 characters long");
-            editTextPassRegister.requestFocus();
+           editTextRepPasswordRegister.setError("Password should be at least 6 characters long");
+           editTextRepPasswordRegister.requestFocus();
             return;
         }
 
@@ -147,6 +151,7 @@ public class registerPage extends MainActivity{
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

@@ -132,8 +132,13 @@
                 android:drawableEnd="@drawable/ic_lock_outline_black_24dp"
                 android:drawableRight="@drawable/ic_lock_outline_black_24dp"
                 android:paddingEnd="10dp"
+                android:layout_marginBottom="20dp"
                 />
-
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/progress_bar_reg_btn"/>
 
     </LinearLayout>
 
