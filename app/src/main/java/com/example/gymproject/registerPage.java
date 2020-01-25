@@ -6,6 +6,7 @@ import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -13,30 +14,25 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.Locale;
 
 
 
-public class registerPage extends MainActivity{
+public class registerPage extends MainActivity {
 
     EditText pass;
     EditText repPass;
-
+    DataBase dataBase;
+    ProgressBar progressBar;
 
     private EditText editTextfirstNameRegister;
     private EditText editTextlastNameRegister;
     private EditText editTextEmailRegister;
     private EditText editTextPassRegister;
     private EditText editTextRepPasswordRegister;
-    private ProgressBar progressBar;
 
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +42,13 @@ public class registerPage extends MainActivity{
         editTextfirstNameRegister = findViewById(R.id.first_name_register);
         editTextlastNameRegister = findViewById(R.id.last_name_register);
         editTextEmailRegister = findViewById(R.id.email_register);
-        editTextPassRegister =  findViewById(R.id.pass_register);
+        editTextPassRegister = findViewById(R.id.pass_register);
         editTextRepPasswordRegister = findViewById(R.id.rep_pass_register);
-        progressBar = findViewById(R.id.progress_bar_reg_btn);
+
 
         Button registerBtnEnd = findViewById(R.id.reg_btn_end);
+        progressBar = findViewById(R.id.progress_bar_reg_btn);
 
-        progressBar.setVisibility(View.GONE);
         registerBtnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,31 +71,18 @@ public class registerPage extends MainActivity{
     }
 
 
-    public void lngCheck(){
+    public void lngCheck() {
         String lng = Locale.getDefault().getDisplayLanguage();
 
-        if (lng.equals("English")){
+        if (lng.equals("English")) {
             editTextPassRegister.setGravity(GravityCompat.START);
             editTextRepPasswordRegister.setGravity(GravityCompat.START);
-        }
-        else{
+        } else {
             editTextPassRegister.setGravity(GravityCompat.END);
             editTextRepPasswordRegister.setGravity(GravityCompat.END);
         }
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (mAuth.getCurrentUser() != null) {
-
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
 
     public void registerUser() {
         final String email = editTextEmailRegister.getText().toString().trim();
@@ -109,13 +92,12 @@ public class registerPage extends MainActivity{
         final String rePass = editTextRepPasswordRegister.getText().toString().trim();
 
 
-
-        if(firstName.isEmpty()){
+        if (firstName.isEmpty()) {
             editTextfirstNameRegister.setError("First name required");
             editTextfirstNameRegister.requestFocus();
             return;
         }
-        if(lastName.isEmpty()){
+        if (lastName.isEmpty()) {
             editTextlastNameRegister.setError("Last name required");
             editTextlastNameRegister.requestFocus();
             return;
@@ -140,48 +122,19 @@ public class registerPage extends MainActivity{
         }
 
         if (rePass.length() < 6) {
-           editTextRepPasswordRegister.setError("Password should be at least 6 characters long");
-           editTextRepPasswordRegister.requestFocus();
+            editTextRepPasswordRegister.setError("Password should be at least 6 characters long");
+            editTextRepPasswordRegister.requestFocus();
             return;
         }
 
-        if(!rePass.equals(pass)){
+        if (!rePass.equals(pass)) {
             editTextRepPasswordRegister.setError("The passwords not match! try again");
             editTextPassRegister.requestFocus();
             return;
         }
-
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            User user = new User(firstName,lastName,email,pass,rePass);
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
-
-                                        Toast.makeText(registerPage.this,getString(R.string.successful_register),Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(registerPage.this, DetailsPage.class);
-                                        startActivity(intent);
-                                    }
-                                }
-                            });
-
-                        }
-
-                        else{
-                            Toast.makeText(registerPage.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
-
-                        }
-                    }
-                });
+        dataBase = new DataBase(firstName, lastName, email, pass, rePass);
+        dataBase.registerUserToDatabase();
+        progressBar.setVisibility(View.GONE);
     }
-
-
-
 }
