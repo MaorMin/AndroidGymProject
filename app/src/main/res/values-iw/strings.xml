@@ -38,5 +38,7 @@
     <string name="creating_fat_percentages">יצרת אחוזי שומן</string>
     <string name="neck_circumference">הכנס/י היקף צוואר</string>
     <string name="extent_of_waist">הכנס/י היקף מותן</string>
+    <string name="main_menu_header">תפריט ראשי</string>
+
     <string name="successful_register">ההרשמה הסתיימה בהצלחה</string>
 </resources>
