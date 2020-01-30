@@ -13,7 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.Locale;
@@ -22,9 +25,9 @@ import java.util.Locale;
 
 public class registerPage extends MainActivity {
 
-    EditText pass;
-    EditText repPass;
-    DataBase dataBase;
+  //  EditText pass;
+ //   EditText repPass;
+    DataBase dataBase = new DataBase();
     ProgressBar progressBar;
 
     private EditText editTextfirstNameRegister;
@@ -32,6 +35,7 @@ public class registerPage extends MainActivity {
     private EditText editTextEmailRegister;
     private EditText editTextPassRegister;
     private EditText editTextRepPasswordRegister;
+
 
 
     @Override
@@ -53,7 +57,17 @@ public class registerPage extends MainActivity {
             @Override
             public void onClick(View v) {
 
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Users");
+
+                final String maor = "m";
+
+                myRef.setValue(maor);
                 registerUser();
+
+
+
             }
         });
 
@@ -75,15 +89,15 @@ public class registerPage extends MainActivity {
         String lng = Locale.getDefault().getDisplayLanguage();
 
         if (lng.equals("English")) {
-            editTextPassRegister.setGravity(GravityCompat.START);
-            editTextRepPasswordRegister.setGravity(GravityCompat.START);
+       //     editTextPassRegister.setGravity(GravityCompat.START);
+        //    editTextRepPasswordRegister.setGravity(GravityCompat.START);
         } else {
-            editTextPassRegister.setGravity(GravityCompat.END);
-            editTextRepPasswordRegister.setGravity(GravityCompat.END);
+          //  editTextPassRegister.setGravity(GravityCompat.END);
+           // editTextRepPasswordRegister.setGravity(GravityCompat.END);
         }
     }
 
-
+    boolean registerSuccess;
     public void registerUser() {
         final String email = editTextEmailRegister.getText().toString().trim();
         final String pass = editTextPassRegister.getText().toString().trim();
@@ -115,13 +129,13 @@ public class registerPage extends MainActivity {
             editTextEmailRegister.requestFocus();
             return;
         }
-        if (pass.length() < 6) {
+        if (pass.length() < 1) {
             editTextPassRegister.setError("Password should be at least 6 characters long");
             editTextPassRegister.requestFocus();
             return;
         }
 
-        if (rePass.length() < 6) {
+        if (rePass.length() < 1) {
             editTextRepPasswordRegister.setError("Password should be at least 6 characters long");
             editTextRepPasswordRegister.requestFocus();
             return;
@@ -132,9 +146,18 @@ public class registerPage extends MainActivity {
             editTextPassRegister.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
-        dataBase = new DataBase(firstName, lastName, email, pass, rePass);
-        dataBase.registerUserToDatabase();
-        progressBar.setVisibility(View.GONE);
+     //   dataBase.registerUserToDatabase(firstName, lastName, email, pass, rePass);
+      //  progressBar.setVisibility(View.VISIBLE);
+        Toast.makeText(registerPage.this,"test: " + firstName,Toast.LENGTH_LONG).show();
+            registerSuccess =  dataBase.registerUserToDatabase(firstName,lastName,email,pass,rePass);
+     //   progressBar.setVisibility(View.GONE);
+        if(registerSuccess) {
+            Toast.makeText(registerPage.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(registerPage.this, DetailsPage.class);
+            startActivity(intent);
+        }
+        else
+        //    Toast.makeText(registerPage.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(registerPage.this,"not succeeded" ,Toast.LENGTH_LONG).show();
     }
 }

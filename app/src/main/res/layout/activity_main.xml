@@ -66,22 +66,35 @@
             android:paddingLeft="10dp"
             android:paddingEnd="10dp" />
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
         <EditText
             android:id="@+id/passTxt"
-
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/edit_text_style"
-            android:drawableEnd="@drawable/ic_lock_outline_black_24dp"
-            android:drawableRight="@drawable/ic_lock_outline_black_24dp"
             android:hint="@string/pas_txt"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:paddingEnd="10dp" />
 
+    <ImageButton
+
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/view_eye"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="38dp"
+        android:id="@+id/eye_vision_btn"
+        />
+
+</RelativeLayout>
 
         <Button
             android:id="@+id/forgot_pass_btn"

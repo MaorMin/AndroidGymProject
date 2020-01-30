@@ -2,6 +2,7 @@ package com.example.gymproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -12,82 +13,99 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
-public class DataBase extends MainActivity {
-
-    private static FirebaseAuth mAuth;
+import static com.facebook.AccessTokenManager.TAG;
 
 
-    String firstNameRegister;
-    String lastNameRegister;
-    String emailRegister;
-    String passRegister;
-    String rePassRegister;
+public class DataBase {
 
-    public DataBase(String firstNameRegister, String lastNameRegister, String emailRegister, String passRegister, String rePassRegister) {
-        this.firstNameRegister = firstNameRegister;
-        this.lastNameRegister = lastNameRegister;
-        this.emailRegister = emailRegister;
-        this.passRegister = passRegister;
-        this.rePassRegister = rePassRegister;
+    private FirebaseAuth mAuth;
+    private static DataBase instance;
+    private boolean flag;
+
+    public DataBase() {
+        mAuth = FirebaseAuth.getInstance();
     }
 
-    private static FirebaseAuth getInstance() {
+    private static DataBase getInstance() {
 
-        if (mAuth == null) {
-            mAuth = FirebaseAuth.getInstance();
+        if (instance == null) {
+            instance = new DataBase();
         }
-        return mAuth;
+        return instance;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (mAuth.getCurrentUser() != null) {
 
+    public void successRegisterSet(boolean flag) {
+        String b = "0";
+        if(flag) {
+            b = "1";
+            Log.d("Flag in Set is:", b);
         }
+        this.flag = flag;
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    public boolean successRegisterGet() {
+
+        String a = "0";
+        if(flag) {
+            a = "1";
+            Log.d("Flag in Get is:", a);
+        }
+        else
+        {
+            a = "0";
+            Log.d("Flag in Get is:", a);
+        }
+        return flag;
     }
 
-        public void registerUserToDatabase() {
-        mAuth=getInstance();
-
-        mAuth.createUserWithEmailAndPassword(emailRegister, passRegister)
+    public boolean registerUserToDatabase(final String firstNameRegister, final String lastNameRegister, final String emailRegister, final String passRegister, final String rePassRegister) {
+        instance = getInstance();
+        instance.mAuth.createUserWithEmailAndPassword(emailRegister, passRegister)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    User user = new User(firstNameRegister, lastNameRegister, emailRegister, passRegister, rePassRegister);
-                                    FirebaseDatabase.getInstance().getReference("Users")
-                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
-                                                Toast.makeText(DataBase.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
-                                                Intent intent = new Intent(DataBase.this, DetailsPage.class);
-                                                startActivity(intent);
-                                            }
-                                        }
-                                    });
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                            User user = new User(firstNameRegister, lastNameRegister, emailRegister, passRegister, rePassRegister);
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
 
-                                } else {
-
-                                    Toast.makeText(DataBase.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        //  Toast.makeText(DataBase.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
+                                        //  Intent intent = new Intent(DataBase.this, DetailsPage.class);
+                                        //  startActivity(intent);
+                                        successRegisterSet(true);
+                                    }
                                 }
-                            }
-                        });
+
+                            });
+
+                        } else if (!task.isSuccessful()) {
+                            Log.d(TAG, "createUserWithEmail Failed:onComplete: " + task.getException().getMessage());
+                            // Toast toast = Toast.makeText(DetailsPage.this, s, Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+
+              });
+        if(!flag) {
+            Log.d("******flag is:", "0");
+        }
+            else {
+            Log.d("******flag is:", "1");
+        }
+
+        return successRegisterGet();
     }
-    }
+}
+
+
+

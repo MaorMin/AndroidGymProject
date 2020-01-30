@@ -1,7 +1,7 @@
 package com.example.gymproject;
 
 public class User {
-    public String firstName,lastName,email,password,repPassword;
+    public  String firstName,lastName,email,password,repPassword;
 
     public User(){}
 
