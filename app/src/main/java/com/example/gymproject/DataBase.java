@@ -25,11 +25,12 @@ public class DataBase {
     private static DataBase instance;
     private boolean flag;
 
-    public DataBase() {
+
+    private DataBase() {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    private static DataBase getInstance() {
+    public static DataBase getInstance() {
 
         if (instance == null) {
             instance = new DataBase();
@@ -63,49 +64,48 @@ public class DataBase {
         return flag;
     }
 
-    public boolean registerUserToDatabase(final String firstNameRegister, final String lastNameRegister, final String emailRegister, final String passRegister, final String rePassRegister) {
-        instance = getInstance();
-        instance.mAuth.createUserWithEmailAndPassword(emailRegister, passRegister)
+
+
+    public void registerUserToDatabase(final String firstNameRegister, final String lastNameRegister, final String emailRegister, final String passRegister, final String rePassRegister,final registerPage page) {
+
+        this.mAuth.createUserWithEmailAndPassword(emailRegister, passRegister)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
                             User user = new User(firstNameRegister, lastNameRegister, emailRegister, passRegister, rePassRegister);
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        //  Toast.makeText(DataBase.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
-                                        //  Intent intent = new Intent(DataBase.this, DetailsPage.class);
-                                        //  startActivity(intent);
-                                        successRegisterSet(true);
-                                    }
-                                }
-
-                            });
-
-                        } else if (!task.isSuccessful()) {
-                            Log.d(TAG, "createUserWithEmail Failed:onComplete: " + task.getException().getMessage());
-                            // Toast toast = Toast.makeText(DetailsPage.this, s, Toast.LENGTH_LONG).show();
+                            DatabaseReference r = FirebaseDatabase.getInstance().getReference("Users");
+                            r.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                page.progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(page, page.getString(R.string.successful_register), Toast.LENGTH_LONG).show();
+                                                Intent intent = new Intent(page, DetailsPage.class);
+                                                page.startActivity(intent);
+                                            }
+                                            else{
+                                                Toast.makeText(page ,"not succeeded" ,Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    });
+//                            successRegisterSet(true);
+//                            if (!flag) {
+//                                Log.d("******flag is:", "0");
+//                            } else {
+//                                Log.d("******flag is:", "1");
+//                            }
                         }
                     }
+                });
 
+//                        return successRegisterGet();
 
-              });
-        if(!flag) {
-            Log.d("******flag is:", "0");
-        }
-            else {
-            Log.d("******flag is:", "1");
-        }
-
-        return successRegisterGet();
     }
 }
+
 
 
 

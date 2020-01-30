@@ -25,9 +25,9 @@ import java.util.Locale;
 
 public class registerPage extends MainActivity {
 
-  //  EditText pass;
- //   EditText repPass;
-    DataBase dataBase = new DataBase();
+    //  EditText pass;
+    //   EditText repPass;
+    DataBase dataBase;
     ProgressBar progressBar;
 
     private EditText editTextfirstNameRegister;
@@ -37,11 +37,13 @@ public class registerPage extends MainActivity {
     private EditText editTextRepPasswordRegister;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
+
+        dataBase = DataBase.getInstance();
+
 
         editTextfirstNameRegister = findViewById(R.id.first_name_register);
         editTextlastNameRegister = findViewById(R.id.last_name_register);
@@ -52,22 +54,15 @@ public class registerPage extends MainActivity {
 
         Button registerBtnEnd = findViewById(R.id.reg_btn_end);
         progressBar = findViewById(R.id.progress_bar_reg_btn);
+        progressBar.setVisibility(View.GONE);
+
+        lngCheckRegPage();
+
 
         registerBtnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("Users");
-
-                final String maor = "m";
-
-                myRef.setValue(maor);
                 registerUser();
-
-
-
             }
         });
 
@@ -81,29 +76,33 @@ public class registerPage extends MainActivity {
             }
         });
 
-        lngCheck();
     }
 
 
-    public void lngCheck() {
+    public void lngCheckRegPage() {
         String lng = Locale.getDefault().getDisplayLanguage();
 
         if (lng.equals("English")) {
-       //     editTextPassRegister.setGravity(GravityCompat.START);
-        //    editTextRepPasswordRegister.setGravity(GravityCompat.START);
+               editTextPassRegister.setGravity(GravityCompat.START);
+               editTextRepPasswordRegister.setGravity(GravityCompat.START);
         } else {
-          //  editTextPassRegister.setGravity(GravityCompat.END);
-           // editTextRepPasswordRegister.setGravity(GravityCompat.END);
+             editTextPassRegister.setGravity(GravityCompat.END);
+            editTextRepPasswordRegister.setGravity(GravityCompat.END);
         }
     }
 
     boolean registerSuccess;
+
     public void registerUser() {
         final String email = editTextEmailRegister.getText().toString().trim();
         final String pass = editTextPassRegister.getText().toString().trim();
         final String firstName = editTextfirstNameRegister.getText().toString().trim();
         final String lastName = editTextlastNameRegister.getText().toString().trim();
         final String rePass = editTextRepPasswordRegister.getText().toString().trim();
+
+
+          progressBar.setVisibility(View.VISIBLE);
+
 
 
         if (firstName.isEmpty()) {
@@ -146,18 +145,18 @@ public class registerPage extends MainActivity {
             editTextPassRegister.requestFocus();
             return;
         }
-     //   dataBase.registerUserToDatabase(firstName, lastName, email, pass, rePass);
-      //  progressBar.setVisibility(View.VISIBLE);
-        Toast.makeText(registerPage.this,"test: " + firstName,Toast.LENGTH_LONG).show();
-            registerSuccess =  dataBase.registerUserToDatabase(firstName,lastName,email,pass,rePass);
-     //   progressBar.setVisibility(View.GONE);
-        if(registerSuccess) {
-            Toast.makeText(registerPage.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(registerPage.this, DetailsPage.class);
-            startActivity(intent);
-        }
-        else
-        //    Toast.makeText(registerPage.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-            Toast.makeText(registerPage.this,"not succeeded" ,Toast.LENGTH_LONG).show();
+        //   dataBase.registerUserToDatabase(firstName, lastName, email, pass, rePass);
+        //  progressBar.setVisibility(View.VISIBLE);
+        dataBase.registerUserToDatabase(firstName, lastName, email, pass, rePass, this);
+        //   progressBar.setVisibility(View.GONE);
+//        if(dataBase.successRegisterGet()) {
+//            Toast.makeText(registerPage.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
+//            Intent intent = new Intent(registerPage.this, DetailsPage.class);
+//            startActivity(intent);
+//        }
+//        else
+//        //    Toast.makeText(registerPage.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(registerPage.this,"not succeeded" ,Toast.LENGTH_LONG).show();
+//    }
     }
 }
