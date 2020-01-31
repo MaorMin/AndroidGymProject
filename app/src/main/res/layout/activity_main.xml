@@ -49,7 +49,6 @@
         android:gravity="center_horizontal|bottom"
         android:orientation="vertical">
 
-
         <EditText
             android:id="@+id/mailTxt"
             android:layout_width="match_parent"
@@ -65,6 +64,8 @@
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:paddingEnd="10dp" />
+
+
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -82,6 +83,7 @@
             android:paddingLeft="10dp"
             android:paddingEnd="10dp" />
 
+
     <ImageButton
 
         android:layout_width="20dp"
@@ -96,6 +98,8 @@
 
 </RelativeLayout>
 
+
+
         <Button
             android:id="@+id/forgot_pass_btn"
             android:layout_width="120dp"
@@ -109,7 +113,12 @@
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark" />
 
-
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="15dp"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark"
+            android:id="@+id/progress_bar_login_btn"/>
         <Button
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
@@ -139,18 +148,16 @@
 
 
             <com.facebook.login.widget.LoginButton
-                android:id="@+id/loginFbBtn"
+                android:id="@+id/login_Fb_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
 
             <com.google.android.gms.common.SignInButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-
                 android:id="@+id/google_login_btn"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="15dp" />
 
         </LinearLayout>
 
@@ -163,10 +170,18 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark"
+            android:id="@+id/progress_bar_login_google_btn"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -31,12 +32,16 @@
     </LinearLayout>
 
 
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
         android:gravity="center_vertical"
         android:orientation="vertical">
+
 
 
         <EditText
@@ -54,6 +59,7 @@
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:paddingEnd="10dp" />
+
 
 
         <Button

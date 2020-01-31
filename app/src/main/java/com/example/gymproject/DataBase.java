@@ -1,10 +1,8 @@
 package com.example.gymproject;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,7 +13,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import static com.facebook.AccessTokenManager.TAG;
 
 
@@ -23,8 +20,6 @@ public class DataBase {
 
     private FirebaseAuth mAuth;
     private static DataBase instance;
-    private boolean flag;
-
 
     private DataBase() {
         mAuth = FirebaseAuth.getInstance();
@@ -38,35 +33,7 @@ public class DataBase {
         return instance;
     }
 
-
-
-    public void successRegisterSet(boolean flag) {
-        String b = "0";
-        if(flag) {
-            b = "1";
-            Log.d("Flag in Set is:", b);
-        }
-        this.flag = flag;
-    }
-
-    public boolean successRegisterGet() {
-
-        String a = "0";
-        if(flag) {
-            a = "1";
-            Log.d("Flag in Get is:", a);
-        }
-        else
-        {
-            a = "0";
-            Log.d("Flag in Get is:", a);
-        }
-        return flag;
-    }
-
-
-
-    public void registerUserToDatabase(final String firstNameRegister, final String lastNameRegister, final String emailRegister, final String passRegister, final String rePassRegister,final registerPage page) {
+    public void registerUserToDatabase(final String firstNameRegister, final String lastNameRegister, final String emailRegister, final String passRegister, final String rePassRegister, final RegisterPage page) {
 
         this.mAuth.createUserWithEmailAndPassword(emailRegister, passRegister)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -80,31 +47,48 @@ public class DataBase {
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful()){
+                                            if (task.isSuccessful()) {
                                                 page.progressBar.setVisibility(View.GONE);
                                                 Toast.makeText(page, page.getString(R.string.successful_register), Toast.LENGTH_LONG).show();
                                                 Intent intent = new Intent(page, DetailsPage.class);
                                                 page.startActivity(intent);
                                             }
-                                            else{
-                                                Toast.makeText(page ,"not succeeded" ,Toast.LENGTH_LONG).show();
-                                            }
                                         }
                                     });
-//                            successRegisterSet(true);
-//                            if (!flag) {
-//                                Log.d("******flag is:", "0");
-//                            } else {
-//                                Log.d("******flag is:", "1");
-//                            }
+                        } else {
+                            page.progressBar.setVisibility(View.GONE);
+                            Toast.makeText(page, page.getString(R.string.register_failed), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
+    }
 
-//                        return successRegisterGet();
+    public void signInUser(final String email, final String password, final MainActivity page) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(page, DetailsPage.class);
+                            page.startActivity(intent);
+                            //FirebaseUser user = mAuth.getCurrentUser();
+                            // updateUI(user);
+                        } else {
+                            page.progressBar.setVisibility(View.GONE);
+                            Toast success = Toast.makeText(page, page.getString(R.string.user_name_and_pass_wrong), Toast.LENGTH_LONG);
+                            success.show();
+                            // updateUI(null);
+                        }
+
+
+                    }
+                });
+
 
     }
+
 }
+
 
 
 

@@ -25,7 +25,6 @@
     <string name="body_fat">Enter percent body fat</string>
     <string name="pass_recover_text">Password recover</string>
     <string name="recover_my_pass_btn">Recover my password</string>
-    <string name="pass_recovery_mail">Your password sent to mail</string>
     <string name="facebook_app_id">174059530511142</string>
     <string name="login_fb_btn">Login</string>
     <string name="exe_top">Choose exercise</string>
@@ -41,4 +40,14 @@
 
 
     <string name="successful_register">The register succssesfulled</string>
+    <string name="register_failed">The register failed! this email is already exists. try again</string>
+    <string name="user_name_and_pass_wrong">Wrong user name or password</string>
+    <string name="email_required">Email required</string>
+    <string name="password_length">Password should be at least 6 characters long</string>
+    <string name="valid_email">Enter a valid email</string>
+    <string name="pass_not_match">The passwords not match! try agai</string>
+    <string name="first_name_required">First name required</string>
+    <string name="last_name_required">Last name required</string>
+    <string name="details_save">Your details has been saved</string>
+    <string name="password_recovery">New password sent to your email</string>
 </resources>

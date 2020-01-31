@@ -1,29 +1,22 @@
 package com.example.gymproject;
 
-import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.Locale;
 
 
 
-public class registerPage extends MainActivity {
+public class RegisterPage extends MainActivity {
 
     //  EditText pass;
     //   EditText repPass;
@@ -71,7 +64,7 @@ public class registerPage extends MainActivity {
         clickHereBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(registerPage.this, MainActivity.class);
+                Intent intent = new Intent(RegisterPage.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -100,63 +93,55 @@ public class registerPage extends MainActivity {
         final String lastName = editTextlastNameRegister.getText().toString().trim();
         final String rePass = editTextRepPasswordRegister.getText().toString().trim();
 
-
-          progressBar.setVisibility(View.VISIBLE);
-
-
+            progressBar.setVisibility(View.VISIBLE);
 
         if (firstName.isEmpty()) {
-            editTextfirstNameRegister.setError("First name required");
+            editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.first_name_required));
             editTextfirstNameRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
         if (lastName.isEmpty()) {
-            editTextlastNameRegister.setError("Last name required");
+            editTextlastNameRegister.setError(RegisterPage.this.getString(R.string.last_name_required));
             editTextlastNameRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
 
         if (email.isEmpty()) {
-            editTextEmailRegister.setError("Email required");
+            editTextEmailRegister.setError(RegisterPage.this.getString(R.string.email_required));
             editTextEmailRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmailRegister.setError("Enter a valid email");
+            editTextEmailRegister.setError(RegisterPage.this.getString(R.string.valid_email));
             editTextEmailRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
-        if (pass.length() < 1) {
-            editTextPassRegister.setError("Password should be at least 6 characters long");
+        if (pass.length() < 6) {
+            editTextPassRegister.setError(RegisterPage.this.getString(R.string.password_length));
             editTextPassRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
-        if (rePass.length() < 1) {
-            editTextRepPasswordRegister.setError("Password should be at least 6 characters long");
+        if (rePass.length() < 6) {
+            editTextRepPasswordRegister.setError(RegisterPage.this.getString(R.string.password_length));
             editTextRepPasswordRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
         if (!rePass.equals(pass)) {
-            editTextRepPasswordRegister.setError("The passwords not match! try again");
-            editTextPassRegister.requestFocus();
+            editTextRepPasswordRegister.setError(RegisterPage.this.getString(R.string.pass_not_match));
+            editTextRepPasswordRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
             return;
         }
-        //   dataBase.registerUserToDatabase(firstName, lastName, email, pass, rePass);
-        //  progressBar.setVisibility(View.VISIBLE);
         dataBase.registerUserToDatabase(firstName, lastName, email, pass, rePass, this);
-        //   progressBar.setVisibility(View.GONE);
-//        if(dataBase.successRegisterGet()) {
-//            Toast.makeText(registerPage.this, getString(R.string.successful_register), Toast.LENGTH_LONG).show();
-//            Intent intent = new Intent(registerPage.this, DetailsPage.class);
-//            startActivity(intent);
-//        }
-//        else
-//        //    Toast.makeText(registerPage.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-//            Toast.makeText(registerPage.this,"not succeeded" ,Toast.LENGTH_LONG).show();
-//    }
     }
 }
