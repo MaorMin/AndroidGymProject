@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         loginFbButton = findViewById(R.id.login_Fb_Btn);
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         loginFbButton.setReadPermissions(Arrays.asList("email", "public_profile"));
-        eyeVisionBtn = findViewById(R.id.eye_vision_btn);
+       // eyeVisionBtn = findViewById(R.id.eye_vision_btn);
         Button regBtn = findViewById(R.id.reg_btn);
         isVisible = false;
         emailTextMain = findViewById(R.id.mailTxt);
@@ -116,19 +116,19 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
 
-        eyeVisionBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isVisible) {
-                    eyeVisionBtn.setImageResource(R.drawable.view_eye_closed);
-                    passTextMain.setInputType(InputType.TYPE_CLASS_TEXT);
-                } else {
-                    eyeVisionBtn.setImageResource(R.drawable.view_eye);
-                    passTextMain.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                }
-                isVisible = !isVisible;
-            }
-        });
+//        eyeVisionBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (isVisible) {
+//                    eyeVisionBtn.setImageResource(R.drawable.view_eye_closed);
+//                    passTextMain.setInputType(InputType.TYPE_CLASS_TEXT);
+//                } else {
+//                    eyeVisionBtn.setImageResource(R.drawable.view_eye);
+//                    passTextMain.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//                }
+//                isVisible = !isVisible;
+//            }
+//        });
 
 
         regBtn.setOnClickListener(new View.OnClickListener() {

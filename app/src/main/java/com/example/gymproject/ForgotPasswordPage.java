@@ -2,9 +2,11 @@ package com.example.gymproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -12,19 +14,24 @@ import java.util.concurrent.TimeUnit;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Timer;
 
+
+
 public class ForgotPasswordPage extends AppCompatActivity {
+
+    LinearLayout rootView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_pass_page);
 
-        final EditText editText = findViewById(R.id.edit_text_recover_pass);
+        final EditText editText = findViewById(R.id.recover_pass_edit_text);
 
-    //    final TextInputLayout til = (TextInputLayout) findViewById(R.id.tilEmail);
         Button recoverPassBtn = findViewById(R.id.recover_pass_btn);
 
         recoverPassBtn.setOnClickListener(new View.OnClickListener() {
@@ -32,7 +39,7 @@ public class ForgotPasswordPage extends AppCompatActivity {
             public void onClick(View v) {
 
 
-            //    til.setError("You need to enter a name");
+           //    til.setError("You need to enter a name");
 
                 final String email = editText.getText().toString().trim();
                 if (email.isEmpty()) {

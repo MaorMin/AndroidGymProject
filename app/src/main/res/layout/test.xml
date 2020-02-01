@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <com.google.android.gms.common.SignInButton
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/etPasswordLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="@dimen/login_spacing_bottom">
 
-        />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fragment_login_password_hint"
+            android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>
-
-
