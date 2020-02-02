@@ -50,7 +50,7 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
 
         Workout workout = workouts.get(position);
         holder.workoutName.setText(workout.getName());
-        holder.workoutSubtext.setText(workout.getSubText());
+      //  holder.workoutSubtext.setText(workout.getSubText());
         holder.workoutImg.setImageResource(workout.getImgId());
 
     }

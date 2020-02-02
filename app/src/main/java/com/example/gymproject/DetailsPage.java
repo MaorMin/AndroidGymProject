@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class DetailsPage extends AppCompatActivity {
     Button signOutGoogle;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,18 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
+        //Workout workout = new Workout("Workout 2", R.drawable.incline_bench_press);
 
+        DataBase dataBase = DataBase.getInstance();
+
+      //  dataBase.addWorkout(workout);
+
+        Exercise exercise = new Exercise("Exercise 1",R.drawable.incline_bench_press);
+
+        dataBase.addExercise(exercise,"Workout 1");
     }
+
+
 }
 
 

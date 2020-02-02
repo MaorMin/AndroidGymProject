@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         lngCheck();
 
         //-----sign in with facebook----//
+
         loginFbButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -183,8 +184,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         googleSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -203,7 +202,6 @@ public class MainActivity extends AppCompatActivity {
                     // ...
                 }
             }
-
             private void signIn() {
 
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -218,26 +216,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+//old function google sign in
 
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+//        if (requestCode == CONTACT_REQUEST) {
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                // Google Sign In was successful, authenticate with Firebase
+//                GoogleSignInAccount account = task.getResult(ApiException.class);
+//                firebaseAuthWithGoogle(account);
+//            } catch (ApiException e) {
+//                // Google Sign In failed, update UI appropriately
+//                Log.w(TAG, "Google sign in failed", e);
+//                // ...
+//            }
+//        }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == CONTACT_REQUEST) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account);
-            } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                Log.w(TAG, "Google sign in failed", e);
-                // ...
-            }
-        }
-
-    }
+//    }
 
 
 
@@ -323,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+                            //updateUI(null);
                         }
 
                         // ...
@@ -333,21 +331,32 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        mCallbackManager.onActivityResult(requestCode, resultCode, data);
-//
-//        if (resultCode != 0) {
-//            Intent intent = new Intent(MainActivity.this, DetailsPage.class);
-//            startActivity(intent);
-//        }
-//    }
-    //-----sign out google accounts
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CONTACT_REQUEST) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account);
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+                // ...
+            }
+
+            if (resultCode != 0) {
+                Intent intent = new Intent(MainActivity.this, DetailsPage.class);
+                startActivity(intent);
+            }
+        }
+        // -----sign out google accounts
 
 
-
-
+    }
 }
 
 
