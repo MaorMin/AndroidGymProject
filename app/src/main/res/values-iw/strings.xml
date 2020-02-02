@@ -39,6 +39,11 @@
     <string name="extent_of_waist">הכנס/י היקף מותן</string>
     <string name="main_menu_header">תפריט ראשי</string>
 
+    <string name="my_workout">האימונים שלי</string>
+    <string name="weekly_activates">פעיליות שבועיות</string>
+    <string name="update_details">עדכן פרטים</string>
+    <string name="preferences">העדפות</string>
+
     <string name="successful_register">ההרשמה הסתיימה בהצלחה</string>
     <string name="register_failed">ההרשמה נכשלה! אימייל זה קיים במערכת. נסה/י שנית</string>
     <string name="user_name_and_pass_wrong">שם משתמש או סיסמה שגויים</string>

@@ -13,9 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainMenu"
-            android:exported="true"/>
-
+        <activity android:name=".WorkoutExercisesPage" android:exported="true">
+        </activity>
+        <activity android:name=".MyWorkoutPage" />
+        <activity
+            android:name=".MainMenu"
+            android:exported="true" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

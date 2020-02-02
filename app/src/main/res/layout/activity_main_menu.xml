@@ -1,58 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<!--<LinearLayout android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:orientation="vertical"-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    android:layout_weight="5"-->
+<!--    android:background="@drawable/register_top"-->
+<!--    android:gravity="bottom"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_marginBottom="20dp">-->
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="140dp"-->
+<!--        android:layout_height="140dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginBottom="7dp"-->
+<!--        android:src="@drawable/logo_transperent_bg" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingTop="15dp"-->
+<!--        android:paddingBottom="15dp"-->
+<!--        android:text="@string/main_menu_header"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="20sp" />-->
+
+<!--</LinearLayout>-->
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    android:layout_weight="10"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_marginStart="10dp"-->
+<!--    android:layout_marginEnd="10dp">-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/recycler">-->
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+
+<!--</LinearLayout>-->
+
+
+
+<!--</LinearLayout>-->
+
+
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:background="@drawable/register_top"
-        android:gravity="bottom"
+        android:layout_weight="4"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp">
-
+        android:gravity="center|bottom">
 
         <ImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="7dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/logo_transperent_bg" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
             android:text="@string/main_menu_header"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="35sp"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="8"
         android:orientation="vertical"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
+        android:gravity="center">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/recycler">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/my_workout_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#6DFFFFFF"
+                android:layout_margin="17dp"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="110dp"
+                    android:minHeight="110dp"
+                    android:src="@drawable/my_workouts_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_workout"
+                    android:paddingTop="5dp"
+                    android:textSize="17sp"/>
 
 
+            </LinearLayout>
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:id="@+id/weekly_activates_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#6DFFFFFF"
+                android:layout_margin="17dp"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="110dp"
+                    android:minHeight="110dp"
+                    android:src="@drawable/weekly_activitys_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weekly_activates"
+                    android:paddingTop="5dp"
+                    android:textSize="17sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/update_details_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#6DFFFFFF"
+                android:layout_margin="17dp"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="110dp"
+                    android:minHeight="110dp"
+                    android:src="@drawable/update_details_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update_details"
+                    android:paddingTop="5dp"
+                    android:textSize="17sp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/preferences_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#6DFFFFFF"
+                android:layout_margin="17dp"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="110dp"
+                    android:minHeight="110dp"
+                    android:src="@drawable/preferences_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferences"
+                    android:paddingTop="5dp"
+                    android:textSize="17sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
     </LinearLayout>
-
-
 
 </LinearLayout>

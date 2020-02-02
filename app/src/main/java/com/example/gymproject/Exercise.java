@@ -1,7 +1,5 @@
 package com.example.gymproject;
 
-import android.widget.ImageView;
-
 public class Exercise {
 
     private String name;
@@ -78,3 +76,4 @@ public class Exercise {
         this.reps = reps;
     }
 }
+
