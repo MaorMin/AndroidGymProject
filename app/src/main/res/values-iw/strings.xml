@@ -55,4 +55,7 @@
     <string name="last_name_required">אנא הכנס/י שם משפחה</string>
     <string name="details_save">הפרטים שלך נשמרו</string>
     <string name="password_recovery">סיסמה חדשה נשלחה למייל שלך</string>
+    <string name="settings">הגדרות</string>
+    <string name="language">שפה</string>
+    <string name="weight">משקל</string>
 </resources>
