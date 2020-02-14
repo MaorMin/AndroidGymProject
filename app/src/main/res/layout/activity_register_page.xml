@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -34,106 +35,172 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_weight="8"
         android:gravity="center"
         android:orientation="vertical">
 
 
-            <EditText
-                android:layout_marginBottom="10dp"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/CounterOver"
+            android:hint="@string/first_name"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="@string/first_name"
+                android:layout_height="45dp"
                 android:drawableEnd="@drawable/ic_person_outline_black_18dp"
                 android:drawableRight="@drawable/ic_person_outline_black_18dp"
-                android:paddingEnd="10dp"
+                android:inputType="textPersonName"
                 android:id="@+id/first_name_register"
+
+
                 />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
+            android:hint="@string/last_name"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="@string/last_name"
+                android:layout_height="45dp"
                 android:drawableEnd="@drawable/ic_person_outline_black_18dp"
                 android:drawableRight="@drawable/ic_person_outline_black_18dp"
-                android:paddingEnd="10dp"
+                android:inputType="textPersonName"
                 android:id="@+id/last_name_register"
+
                 />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
+            android:hint="@string/mail_txt"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="@string/mail_txt"
-                android:inputType="textEmailAddress"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
+                android:layout_height="45dp"
                 android:drawableEnd="@drawable/ic_mail_outline_black_18dp"
                 android:drawableRight="@drawable/ic_mail_outline_black_18dp"
-                android:paddingEnd="10dp"
-                android:id="@+id/email_register"/>
-
-
-
-
-            <EditText
-                android:id="@+id/pass_register"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/edit_text_style"
-                android:gravity="end"
-                android:hint="@string/pas_txt"
-                android:inputType="textPassword"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:drawableEnd="@drawable/ic_lock_outline_black_24dp"
-                android:drawableRight="@drawable/ic_lock_outline_black_24dp"
-                android:paddingEnd="10dp"
-               />
-
-
-
-
-
-            <EditText
-                android:id="@+id/rep_pass_register"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:background="@drawable/edit_text_style"
-                android:hint="@string/repeat_pass"
-                android:gravity="end"
-                android:inputType="textPassword"
-                android:drawableEnd="@drawable/ic_lock_outline_black_24dp"
-                android:drawableRight="@drawable/ic_lock_outline_black_24dp"
-                android:paddingEnd="10dp"
-                android:layout_marginBottom="20dp"
+                android:inputType="textEmailAddress"
+                android:id="@+id/email_register"
                 />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/CounterOver"
+            android:hint="@string/pas_txt"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableEnd="@drawable/ic_lock_outline_black_24dp"
+                android:drawableRight="@drawable/ic_lock_outline_black_24dp"
+                android:inputType="textPassword"
+                android:id="@+id/pass_register"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
+            android:hint="@string/repeat_pass"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+                      >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableEnd="@drawable/ic_lock_outline_black_24dp"
+                android:drawableRight="@drawable/ic_lock_outline_black_24dp"
+                android:inputType="textPassword"
+                android:id="@+id/rep_pass_register"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
         <ProgressBar
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -145,14 +212,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="2"
         android:orientation="vertical"
         android:gravity="bottom">
 
         <Button
             android:id="@+id/reg_btn_end"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"

@@ -84,8 +84,6 @@ public class RegisterPage extends MainActivity {
         }
     }
 
-    boolean registerSuccess;
-
     public void registerUser() {
         final String email = editTextEmailRegister.getText().toString().trim();
         final String pass = editTextPassRegister.getText().toString().trim();
@@ -101,9 +99,25 @@ public class RegisterPage extends MainActivity {
             progressBar.setVisibility(View.GONE);
             return;
         }
+
+        if(firstName.length() > 20){
+            editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
+            editTextfirstNameRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+
+
         if (lastName.isEmpty()) {
             editTextlastNameRegister.setError(RegisterPage.this.getString(R.string.last_name_required));
             editTextlastNameRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+
+        if(lastName.length() > 20){
+            editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
+            editTextfirstNameRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
             return;
         }
@@ -116,14 +130,28 @@ public class RegisterPage extends MainActivity {
             return;
         }
 
+        if(email.length() > 20){
+            editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
+            editTextfirstNameRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmailRegister.setError(RegisterPage.this.getString(R.string.valid_email));
             editTextEmailRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
             return;
         }
-        if (pass.length() < 6) {
+        if (pass.length() < 6 ) {
             editTextPassRegister.setError(RegisterPage.this.getString(R.string.password_length));
+            editTextPassRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+
+        if (pass.length() > 20 ) {
+            editTextPassRegister.setError(RegisterPage.this.getString(R.string.string_length));
             editTextPassRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
             return;
@@ -132,6 +160,13 @@ public class RegisterPage extends MainActivity {
         if (rePass.length() < 6) {
             editTextRepPasswordRegister.setError(RegisterPage.this.getString(R.string.password_length));
             editTextRepPasswordRegister.requestFocus();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+
+        if (rePass.length() > 20 ) {
+            editTextPassRegister.setError(RegisterPage.this.getString(R.string.string_length));
+            editTextPassRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
             return;
         }

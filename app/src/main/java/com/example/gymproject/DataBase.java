@@ -84,8 +84,6 @@ public class DataBase {
 
                     }
                 });
-
-
     }
 
     public void addWorkout(Workout workout){
@@ -101,9 +99,6 @@ public class DataBase {
                }
            }
        });
-
-
-
     }
 
     public void addExercise(Exercise exercise,String workout){
@@ -118,6 +113,42 @@ public class DataBase {
                 }
             }
         });
+    }
+
+    public void updateMyDetails(MyDetails myDetails, final DetailsPage page){
+        FirebaseUser userId =  this.mAuth.getCurrentUser();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + userId.getUid());
+        ref.child("My Details").setValue(myDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                Intent intent = new Intent(page,MainMenu.class);
+                page.startActivity(intent);
+                }
+            }
+        });
+    }
+
+    public void passwordResetMail(String emailAddress,final ForgotPasswordPage page){
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+       // String emailAddress = mAuth.getCurrentUser().getEmail();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "Email sent.");
+                            Intent intent = new Intent(page, MainActivity.class);
+                            page.startActivity(intent);
+                        }
+                        else{
+                            Intent intent = new Intent(page, MainActivity.class);
+                            page.startActivity(intent);
+                        }
+                    }
+                });
     }
 
    private void updateUI(FirebaseUser user){

@@ -3,5 +3,6 @@
     <color name="colorPrimary">#FFFF841F</color>
     <color name="colorPrimaryDark">#D64B09</color>
     <color name="colorAccent"> #D81B60</color>
+    <color name="CounterOver">#FF0000</color>
 
 </resources>
