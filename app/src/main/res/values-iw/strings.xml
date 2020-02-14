@@ -60,4 +60,7 @@
     <string name="weight_rquiered">אנא הכנס/י משקל</string>
     <string name="age_requiered">"אנא הכנס/י הגיל "</string>
     <string name="fat_percent_rquierd">אנא הכנס/י אחוזי שומן</string>
+    <string name="settings">הגדרות</string>
+    <string name="language">שפה</string>
+    <string name="Weight">משקל</string>
 </resources>

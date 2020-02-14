@@ -59,4 +59,7 @@
     <string name="weight_rquiered">Weight requierd</string>
     <string name="age_requiered">Age required</string>
     <string name="fat_percent_rquierd">Fat percent requierd</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="Weight">Weight</string>
 </resources>
