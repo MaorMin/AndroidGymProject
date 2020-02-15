@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,11 +16,19 @@ import java.util.List;
 public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExerciseAdapter.WorkoutExerciseViewHolder> {
 
     private List<Exercise> exercises;
+    private WorkoutExerciseListener listener;
 
     interface WorkoutExerciseListener{
-        void onWorkoutExericiseClickListener(int position, View view);
-        
+        void onCollapseClickListener(LinearLayout layout, ImageView arrowDown, ImageView arrowUp);
+        void onExpendClickListener(LinearLayout layout, ImageView arrowDown, ImageView arrowUp);
+        void onWorkoutExerciseLongClicked(int position, View view, ImageView recycleBin);
+        void onDeleteListener(int position);
+        void onClickListener(ImageView img);
 
+    }
+
+    public void setListener(WorkoutExerciseListener listener){
+        this.listener = listener;
     }
 
     public WorkoutExerciseAdapter(List<Exercise> exercises) {
@@ -34,6 +43,10 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
         TextView sets;
         TextView reps;
         ImageView exeImg;
+        ImageView expandCard;
+        ImageView collapseCard;
+        LinearLayout expandableLayout;
+        ImageView recycleBin;
 
         public WorkoutExerciseViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -44,6 +57,60 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
             sets = itemView.findViewById(R.id.exercise_sets);
             reps = itemView.findViewById(R.id.exercise_reps);
             exeImg =  itemView.findViewById(R.id.workout_exercise_img);
+            expandCard = itemView.findViewById(R.id.exercise_expand_btn);
+            collapseCard = itemView.findViewById(R.id.exercise_collapse_btn);
+            expandableLayout = itemView.findViewById(R.id.expandable_layout);
+            recycleBin = itemView.findViewById(R.id.recycle_bin);
+
+
+            expandCard.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    if (listener != null)
+                        listener.onExpendClickListener(expandableLayout, expandCard, collapseCard);
+                }
+            });
+
+            collapseCard.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    if (listener != null)
+                        listener.onCollapseClickListener(expandableLayout, expandCard, collapseCard);
+                }
+            });
+
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener(){
+
+                @Override
+                public boolean onLongClick(View view) {
+                    if (listener != null)
+                        listener.onWorkoutExerciseLongClicked(getAdapterPosition(), view, recycleBin);
+                    return true;
+                }
+            });
+
+            recycleBin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        listener.onDeleteListener(getAdapterPosition());
+                    }
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        listener.onClickListener(recycleBin);
+                    }
+                }
+            });
+
+
         }
     }
 
@@ -69,6 +136,8 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
         holder.reps.setText("Reps:" + exercise.getReps());
 
     }
+
+
 
     @Override
     public int getItemCount() {

@@ -55,4 +55,8 @@
     <string name="last_name_required">Last name required</string>
     <string name="details_save">Your details has been saved</string>
     <string name="password_recovery">New password sent to your email</string>
+    <string name="enter_workout_name">Enter Workout Name</string>
+    <string name="add_new_workout">Add new workout:</string>
+    <string name="select_image">Select image:</string>
+    <string name="add">Add</string>
 </resources>

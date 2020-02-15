@@ -15,6 +15,17 @@ import java.util.List;
 public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWorkoutViewHolder> {
 
     private List<Workout> workouts;
+    private MyWorkoutListener listener;
+
+    interface MyWorkoutListener{
+        void onClickListener(int position);
+        void onWorkoutLongClicked(int position, View view, ImageView recycleBin);
+        void onDeleteListener(int position);
+    }
+
+    public void setListener(MyWorkoutListener listener){
+        this.listener = listener;
+    }
 
     public MyWorkoutAdapter(List<Workout> workouts) {
         this.workouts = workouts;
@@ -25,6 +36,7 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
         TextView workoutName;
         TextView workoutSubtext;
         ImageView workoutImg;
+        ImageView recycleBin;
 
         public MyWorkoutViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -32,6 +44,39 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
             workoutName = itemView.findViewById(R.id.workout_name);
             workoutSubtext = itemView.findViewById(R.id.workout_sub_text);
             workoutImg =  itemView.findViewById(R.id.workout_img);
+            recycleBin = itemView.findViewById(R.id.workout_recycle_bin);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listener != null){
+                        listener.onClickListener(getAdapterPosition());
+                    }
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    if(listener != null){
+                        listener.onWorkoutLongClicked(getAdapterPosition(), view, recycleBin);
+                    }
+                    return true;
+                }
+            });
+
+            recycleBin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        listener.onDeleteListener(getAdapterPosition());
+                    }
+                }
+            });
+
+
+
         }
     }
 

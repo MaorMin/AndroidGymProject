@@ -24,6 +24,16 @@
             android:paddingLeft="20dp"
             android:id="@+id/workout_name_header"/>
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add_white_16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/add_workout_exe_btn"/>
+
     </RelativeLayout>
 
     <LinearLayout
