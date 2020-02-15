@@ -36,12 +36,12 @@ public class MyWorkoutPage extends AppCompatActivity {
 
         final List<Workout> workouts = new ArrayList<>();
 
-        workouts.add(new Workout("Sunday", "My First Workout", R.drawable.incline_bench_press));
-        workouts.add(new Workout("Monday", "My Second Workout", R.drawable.incline_bench_press));
-        workouts.add(new Workout("Tuesday", "My Third Workout", R.drawable.incline_bench_press));
-        workouts.add(new Workout("Sunday", "My First Workout", R.drawable.incline_bench_press));
-        workouts.add(new Workout("Sunday", "My First Workout", R.drawable.incline_bench_press));
-        workouts.add(new Workout("Sunday", "My First Workout", R.drawable.incline_bench_press));
+        workouts.add(new Workout("Sunday",  R.drawable.incline_bench_press));
+        workouts.add(new Workout("Monday",  R.drawable.incline_bench_press));
+        workouts.add(new Workout("Tuesday", R.drawable.incline_bench_press));
+        workouts.add(new Workout("Sunday",  R.drawable.incline_bench_press));
+        workouts.add(new Workout("Sunday",  R.drawable.incline_bench_press));
+        workouts.add(new Workout("Sunday",  R.drawable.incline_bench_press));
 
 
         exercises = new ArrayList<>();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -34,16 +35,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="10"
         android:gravity="center|bottom"
         android:orientation="vertical">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:id="@+id/sign_out_google_btn"
-            android:text="Sign out"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -57,20 +51,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginBottom="0dp"
                 android:text="@string/gender_text" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp">
+                android:layout_height="wrap_content">
 
 
                 <ImageButton
-                    android:id="@+id/maleIcon"
+                    android:id="@+id/maleBtn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                   android:layout_gravity="center|right"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:background="@drawable/male_icon_new"
                     />
 
@@ -79,64 +73,150 @@
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center|left"
-                    android:background="@drawable/female_icon_new" />
+                    android:background="@drawable/female_icon_new"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+
+                    />
             </LinearLayout>
         </LinearLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
 
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:background="@drawable/edit_text_style"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
             android:hint="@string/height_text"
-            />
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableEnd="@drawable/ic_mail_outline_black_18dp"
+                android:drawableRight="@drawable/ic_mail_outline_black_18dp"
+                android:inputType="numberDecimal"
+                android:id="@+id/height"
 
-        <EditText
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/edit_text_style"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
             android:hint="@string/weight_text"
+            android:inputType="numberDecimal"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableEnd="@drawable/ic_mail_outline_black_18dp"
+                android:drawableRight="@drawable/ic_mail_outline_black_18dp"
+                android:inputType="numberDecimal"
+                android:id="@+id/weight"
 
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp" />
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
-            android:id="@+id/edit_text"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
+            android:hint="@string/age_text"
+            android:inputType="numberDecimal"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableEnd="@drawable/ic_mail_outline_black_18dp"
+                android:drawableRight="@drawable/ic_mail_outline_black_18dp"
+                android:inputType="numberDecimal"
+                android:id="@+id/age"
 
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="@string/age_text"/>
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            app:boxStrokeColor="#696969"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
+            android:hint="@string/body_fat"
+            android:inputType="numberDecimal"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@string/new_member"
             android:id="@+id/body_fat_text"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="15dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableEnd="@drawable/ic_mail_outline_black_18dp"
+                android:drawableRight="@drawable/ic_mail_outline_black_18dp"
+                android:inputType="numberDecimal"
+                android:id="@+id/percent_body_fat"
 
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="@string/body_fat"/>
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/progress_bar_details_page"/>
+
 
     </LinearLayout>
 
@@ -149,7 +229,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"

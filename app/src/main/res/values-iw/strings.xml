@@ -40,7 +40,7 @@
     <string name="main_menu_header">תפריט ראשי</string>
 
     <string name="my_workout">האימונים שלי</string>
-    <string name="weekly_activates">פעיליות שבועיות</string>
+    <string name="weekly_activates">פעילויות שבועיות</string>
     <string name="update_details">עדכן פרטים</string>
     <string name="preferences">העדפות</string>
 
@@ -59,4 +59,12 @@
     <string name="add_new_workout">Add new workout:</string>
     <string name="select_image">Select image:</string>
     <string name="add">Add</string>
+    <string name="string_length">אנא הכנס\\י פחות תווים</string>
+    <string name="height_rquiered">אנא הכנס/י גובה</string>
+    <string name="weight_rquiered">אנא הכנס/י משקל</string>
+    <string name="age_requiered">"אנא הכנס/י הגיל "</string>
+    <string name="fat_percent_rquierd">אנא הכנס/י אחוזי שומן</string>
+    <string name="settings">הגדרות</string>
+    <string name="language">שפה</string>
+    <string name="Weight">משקל</string>
 </resources>

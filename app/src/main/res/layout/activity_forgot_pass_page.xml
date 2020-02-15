@@ -40,9 +40,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"
+        android:layout_weight="10"
         android:id="@+id/LinearLayout_forgot_pass"
-        android:gravity="center_vertical"
+        android:gravity="top"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="12dp"
+
             app:boxStrokeColor="#696969"
             app:boxCornerRadiusTopEnd="20dp"
             app:boxCornerRadiusBottomEnd="20dp"
@@ -62,13 +62,12 @@
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
             android:hint="@string/mail_txt"
-            android:inputType="textEmailAddress"
             app:errorEnabled="true"
             app:errorTextAppearance="@string/new_member"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:drawableEnd="@drawable/ic_mail_outline_black_18dp"
                 android:drawableRight="@drawable/ic_mail_outline_black_18dp"
                 android:id="@+id/recover_pass_edit_text"
@@ -77,9 +76,17 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/forgot_pass_progress_bar"/>
+
+
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:textColor="@android:color/white"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"

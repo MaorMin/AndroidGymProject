@@ -12,6 +12,22 @@
         <item name="android:textColor">@android:color/holo_blue_light</item>
     </style>
 
+
+    <style name="FacebookLoginButton">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/facebook_button</item>
+        <item name="android:minHeight">50dp</item>
+    </style>
+
+    <style name="test">
+        <item name="android:background">@drawable/google_test</item>
+    </style>
+    <style name="GoogleLoginButton">
+        <item name="android:background">@drawable/google_test</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>

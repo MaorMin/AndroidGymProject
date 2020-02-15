@@ -25,7 +25,6 @@
     <string name="body_fat">Enter percent body fat</string>
     <string name="pass_recover_text">Password recover</string>
     <string name="recover_my_pass_btn">Recover my password</string>
-    <string name="pass_recovery_mail">Your password sent to mail</string>
     <string name="facebook_app_id">174059530511142</string>
     <string name="login_fb_btn">Login</string>
     <string name="exe_top">Choose exercise</string>
@@ -55,6 +54,14 @@
     <string name="last_name_required">Last name required</string>
     <string name="details_save">Your details has been saved</string>
     <string name="password_recovery">New password sent to your email</string>
+    <string name="string_length">Please insert less characters</string>
+    <string name="height_rquiered">Height required</string>
+    <string name="weight_rquiered">Weight requierd</string>
+    <string name="age_requiered">Age required</string>
+    <string name="fat_percent_rquierd">Fat percent requierd</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="Weight">Weight</string>
     <string name="enter_workout_name">Enter Workout Name</string>
     <string name="add_new_workout">Add new workout:</string>
     <string name="select_image">Select image:</string>
