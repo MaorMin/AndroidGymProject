@@ -252,7 +252,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         // userDetails();
-        FirebaseAuth.getInstance().signOut();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
 

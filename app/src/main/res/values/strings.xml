@@ -66,4 +66,5 @@
     <string name="add_new_workout">Add new workout:</string>
     <string name="select_image">Select image:</string>
     <string name="add">Add</string>
+    <string name="logoff_btn">Logoff</string>
 </resources>

@@ -36,6 +36,10 @@ public class DetailsPage extends AppCompatActivity {
     private static final String TAG = null;
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +54,7 @@ public class DetailsPage extends AppCompatActivity {
         maleGenderBtn = findViewById(R.id.maleBtn);
         dataBase = DataBase.getInstance();
         progressBar = findViewById(R.id.progress_bar_details_page);
-        final Button finishDetailsBtn = findViewById(R.id.finish_details_btn);
+        Button finishDetailsBtn = findViewById(R.id.finish_details_btn);
         //  signOutGoogle = findViewById(R.id.sign_out_google_btn);
 
         progressBar.setVisibility(View.GONE);
@@ -89,38 +93,21 @@ public class DetailsPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 buttonEffect(v);
+                String female = "female";
+
             }
         });
 
-        //Workout workout = new Workout("Workout 2", R.drawable.incline_bench_press);
-
-        //    DataBase dataBase = DataBase.getInstance();
-
-        //  dataBase.addWorkout(workout);
-
-        //    Exercise exercise = new Exercise("Exercise 1", R.drawable.incline_bench_press);
-
-        //    dataBase.addExercise(exercise, "Workout 1");
 
 
     }
 
     public void updateDetails() {
 
-        String heightCheck =editTextHeight.getText().toString().trim();
+        String heightCheck = editTextHeight.getText().toString().trim();
         String weightCheck = editTextWeight.getText().toString().trim();
         String ageCheck = editTextAge.getText().toString().trim();
         String fatPercentCheck = editTextFatPercent.getText().toString().trim();
-
-//        double heightCheck = Double.parseDouble(editTextHeight.getText().toString().trim());
-//        double weightCheck = Double.parseDouble(editTextWeight.getText().toString().trim());
-//        double ageCheck = Double.parseDouble(editTextAge.getText().toString().trim());
-//        double fatPercentCheck = Double.parseDouble(editTextFatPercent.getText().toString().trim());
-
-//        String heightCheck = Double.toString(height);
-//        String weightCheck = Double.toString(weight);
-//        String ageCheck = Double.toString(age);
-//        String fatPercentCheck = Double.toString(fatPercent);
 
         Log.d(TAG,"Hight is:" + heightCheck);
 
