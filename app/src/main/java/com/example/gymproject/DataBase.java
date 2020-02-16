@@ -70,11 +70,13 @@ public class DataBase {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(page, DetailsPage.class);
+                            Intent intent = new Intent(page, MainMenu.class);
                             page.startActivity(intent);
+                            page.finish();
                             //FirebaseUser user = mAuth.getCurrentUser();
                             // updateUI(user);
-                        } else {
+                        }
+                        else {
                             page.progressBar.setVisibility(View.GONE);
                             Toast success = Toast.makeText(page, page.getString(R.string.user_name_and_pass_wrong), Toast.LENGTH_LONG);
                             success.show();
@@ -83,22 +85,24 @@ public class DataBase {
 
 
                     }
+
                 });
     }
 
-    public void addWorkout(Workout workout){
-     //   Workout workout = new Workout(workoutName,imgId);
-       FirebaseUser userId =  this.mAuth.getCurrentUser();
-       updateUI(userId);
-       DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + userId.getUid() + "/Workouts");
-       ref.child(workout.getName()).setValue(workout).addOnCompleteListener(new OnCompleteListener<Void>() {
-           @Override
-           public void onComplete(@NonNull Task<Void> task) {
-               if(task.isSuccessful()){
 
-               }
-           }
-       });
+    public void addWorkout(Workout workout){
+        //   Workout workout = new Workout(workoutName,imgId);
+        FirebaseUser userId =  this.mAuth.getCurrentUser();
+        updateUI(userId);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + userId.getUid() + "/Workouts");
+        ref.child(workout.getName()).setValue(workout).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+
+                }
+            }
+        });
     }
 
     public void addExercise(Exercise exercise,String workout){
@@ -123,8 +127,8 @@ public class DataBase {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                Intent intent = new Intent(page,MainMenu.class);
-                page.startActivity(intent);
+                    Intent intent = new Intent(page,MainMenu.class);
+                    page.startActivity(intent);
                 }
             }
         });
@@ -132,7 +136,7 @@ public class DataBase {
 
     public void passwordResetMail(String emailAddress,final ForgotPasswordPage page){
         FirebaseAuth auth = FirebaseAuth.getInstance();
-       // String emailAddress = mAuth.getCurrentUser().getEmail();
+        // String emailAddress = mAuth.getCurrentUser().getEmail();
 
         auth.sendPasswordResetEmail(emailAddress)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -151,11 +155,11 @@ public class DataBase {
                 });
     }
 
-   private void updateUI(FirebaseUser user){
-    if(user!= null){
-        user.getUid();
+    private void updateUI(FirebaseUser user){
+        if(user!= null){
+            user.getUid();
 
-    }
+        }
 
     }
 

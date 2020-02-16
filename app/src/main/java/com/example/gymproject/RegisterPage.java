@@ -100,7 +100,7 @@ public class RegisterPage extends MainActivity {
             return;
         }
 
-        if(firstName.length() > 20){
+        if(firstName.length() > 25){
             editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
             editTextfirstNameRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
@@ -115,9 +115,9 @@ public class RegisterPage extends MainActivity {
             return;
         }
 
-        if(lastName.length() > 20){
-            editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
-            editTextfirstNameRegister.requestFocus();
+        if(lastName.length() > 25){
+            editTextlastNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
+            editTextlastNameRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
             return;
         }
@@ -130,9 +130,9 @@ public class RegisterPage extends MainActivity {
             return;
         }
 
-        if(email.length() > 20){
-            editTextfirstNameRegister.setError(RegisterPage.this.getString(R.string.string_length));
-            editTextfirstNameRegister.requestFocus();
+        if(email.length() > 25){
+            editTextEmailRegister.setError(RegisterPage.this.getString(R.string.string_length));
+            editTextEmailRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
             return;
         }
@@ -150,7 +150,7 @@ public class RegisterPage extends MainActivity {
             return;
         }
 
-        if (pass.length() > 20 ) {
+        if (pass.length() > 25 ) {
             editTextPassRegister.setError(RegisterPage.this.getString(R.string.string_length));
             editTextPassRegister.requestFocus();
             progressBar.setVisibility(View.GONE);
@@ -164,7 +164,7 @@ public class RegisterPage extends MainActivity {
             return;
         }
 
-        if (rePass.length() > 20 ) {
+        if (rePass.length() > 25 ) {
             editTextPassRegister.setError(RegisterPage.this.getString(R.string.string_length));
             editTextPassRegister.requestFocus();
             progressBar.setVisibility(View.GONE);

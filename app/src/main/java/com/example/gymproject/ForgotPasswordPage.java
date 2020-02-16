@@ -57,7 +57,7 @@ public class ForgotPasswordPage extends AppCompatActivity {
                     return;
                 }
 
-                if (email.length() > 20 ) {
+                if (email.length() > 25 ) {
                     editText.setError(ForgotPasswordPage.this.getString(R.string.string_length));
                     editText.requestFocus();
                     progressBar.setVisibility(View.GONE);

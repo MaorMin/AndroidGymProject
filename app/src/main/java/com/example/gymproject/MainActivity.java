@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         loginFbButton = findViewById(R.id.login_Fb_Btn);
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         loginFbButton.setReadPermissions(Arrays.asList("email", "public_profile"));
-       // eyeVisionBtn = findViewById(R.id.eye_vision_btn);
+        // eyeVisionBtn = findViewById(R.id.eye_vision_btn);
         Button regBtn = findViewById(R.id.reg_btn);
         isVisible = false;
         emailTextMain = findViewById(R.id.mailTxt);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         lngCheck();
 
-        //-----sign in with facebook----//
+        //-----sign in with facebook button----//
 
         loginFbButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -141,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
                 final String pass = passTextMain.getText().toString().trim();
 
 
-
                 if (email.isEmpty()) {
                     emailTextMain.setError(MainActivity.this.getString(R.string.email_required));
                     emailTextMain.requestFocus();
@@ -149,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (email.length() > 20 ) {
+                if (email.length() > 25) {
                     emailTextMain.setError(MainActivity.this.getString(R.string.string_length));
                     emailTextMain.requestFocus();
                     progressBar.setVisibility(View.GONE);
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (pass.length() > 20 ) {
+                if (pass.length() > 25) {
                     passTextMain.setError(MainActivity.this.getString(R.string.string_length));
                     passTextMain.requestFocus();
                     progressBar.setVisibility(View.GONE);
@@ -201,8 +200,8 @@ public class MainActivity extends AppCompatActivity {
                         .requestEmail()
                         .build();
                 mGoogleSignInClient = GoogleSignIn.getClient(MainActivity.this, gso);
-                    //mGoogleSignInClient.revokeAccess();
-                       // mGoogleSignInClient.signOut();
+                //mGoogleSignInClient.revokeAccess();
+                // mGoogleSignInClient.signOut();
                 switch (v.getId()) {
                     case R.id.google_login_btn:
                         signIn();
@@ -210,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                     // ...
                 }
             }
+
             private void signIn() {
 
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -219,8 +219,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-
-
 
 
     }
@@ -248,22 +246,19 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-
-
     //Google and Facebook sign in OnStart method
     @Override
     protected void onStart() {
         super.onStart();
 
-       // userDetails();
+        // userDetails();
+        FirebaseAuth.getInstance().signOut();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-//            Intent intent = new Intent(MainActivity.this,MainMenu.class);
-//            startActivity(intent);
-        } else {
+    }
 
-        }
+
 
 //        Profile profile = Profile.getCurrentProfile();
 //        if (profile != null) {
@@ -272,14 +267,14 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //        }
 
-      //  GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //  GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        updateUI(currentUser);
 
 
         //updateUI(account);
 
-    }
+
 
 //    private void userDetails() {
 //        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("My Details");
@@ -302,10 +297,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void updateUI(FirebaseUser user) {
-        if (user == null) {
+    public void updateUI(FirebaseUser currentUser) {
 
-        } else {
+        if (currentUser != null) {
+            Intent intent = new Intent(MainActivity.this, MainMenu.class);
+            startActivity(intent);
+            finish();
+        }
+
+         else {
 
         }
     }
@@ -323,6 +323,7 @@ public class MainActivity extends AppCompatActivity {
                             progressBarGoogleFacebook.setVisibility(View.GONE);
                             Intent intent = new Intent(MainActivity.this, DetailsPage.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             progressBarGoogleFacebook.setVisibility(View.GONE);
@@ -334,8 +335,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-//---login with facebook
 
+
+
+//---login with facebook
 
     private void handleFacebookAccessToken(AccessToken token) {
 
@@ -349,10 +352,10 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                            Intent intent = new Intent(MainActivity.this,DetailsPage.class);
+
+                            Intent intent = new Intent(MainActivity.this,MainMenu.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -384,8 +387,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (resultCode != 0) {
-                Intent intent = new Intent(MainActivity.this, DetailsPage.class);
+                Intent intent = new Intent(MainActivity.this, MainMenu.class);
                 startActivity(intent);
+                finish();
             }
         }
         // -----sign out google accounts

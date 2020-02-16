@@ -50,12 +50,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
-            app:counterMaxLength="20"
+            app:counterMaxLength="25"
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@color/CounterOver"
             android:hint="@string/first_name"
-            app:errorEnabled="true"
-            app:errorTextAppearance="@string/new_member"
 
 
             >
@@ -83,12 +81,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
-            app:counterMaxLength="20"
+            app:counterMaxLength="25"
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
             android:hint="@string/last_name"
-            app:errorEnabled="true"
-            app:errorTextAppearance="@string/new_member"
+
 
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -116,12 +113,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
-            app:counterMaxLength="20"
+            app:counterMaxLength="25"
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
             android:hint="@string/mail_txt"
-            app:errorEnabled="true"
-            app:errorTextAppearance="@string/new_member"
+
 
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -149,12 +145,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
-            app:counterMaxLength="20"
+            app:counterMaxLength="25"
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@color/CounterOver"
             android:hint="@string/pas_txt"
-            app:errorEnabled="true"
-            app:errorTextAppearance="@string/new_member"
+
 
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -183,12 +178,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
-            app:counterMaxLength="20"
+            app:counterMaxLength="25"
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@color/com_facebook_messenger_blue"
             android:hint="@string/repeat_pass"
-            app:errorEnabled="true"
-            app:errorTextAppearance="@string/new_member"
+
                       >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
