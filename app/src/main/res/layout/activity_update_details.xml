@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Height"
+                android:text="@string/height"
                 android:textColor="@android:color/black"
                 android:textSize="25sp" />
 
@@ -103,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Age"
+                android:text="@string/age"
                 android:textColor="@android:color/black"
                 android:textSize="25sp" />
 
@@ -129,7 +129,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Percrnt_body_fat"
+                android:text="@string/percent_body_fat"
                 android:textColor="@android:color/black"
                 android:textSize="25sp" />
 

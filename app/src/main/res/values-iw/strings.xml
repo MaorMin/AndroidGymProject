@@ -68,4 +68,7 @@
     <string name="language">שפה</string>
     <string name="Weight">משקל</string>
     <string name="logoff_btn">התנתק/י</string>
+    <string name="age">גיל</string>
+    <string name="height">גובה</string>
+    <string name="percent_body_fat">אחוזי שומן בגוף</string>
 </resources>
