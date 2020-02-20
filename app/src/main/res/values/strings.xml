@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">GymProject</string>
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
     <string name="reg_btn">Create a new account</string>
     <string name="mail_txt">Enter your mail</string>
     <string name="login_btn">Login</string>
