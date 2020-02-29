@@ -77,4 +77,7 @@
     <string name="weight">Weight:</string>
     <string name="sets">Sets:</string>
     <string name="reps">Reps:</string>
+    <string name="age">גיל</string>
+    <string name="height">גובה</string>
+    <string name="percent_body_fat">אחוזי שומן בגוף</string>
 </resources>
