@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/my_workout"
                     android:paddingTop="5dp"
-                    android:textSize="17sp"/>
+                    android:textSize="14sp"/>
 
 
             </LinearLayout>
@@ -162,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/weekly_activates"
                     android:paddingTop="5dp"
-                    android:textSize="17sp"/>
+                    android:textSize="14sp"/>
 
 
             </LinearLayout>
@@ -198,7 +198,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/update_details"
                     android:paddingTop="5dp"
-                    android:textSize="17sp"/>
+                    android:textSize="14sp"/>
 
 
             </LinearLayout>
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/preferences"
                     android:paddingTop="5dp"
-                    android:textSize="17sp"/>
+                    android:textSize="14sp"/>
 
 
             </LinearLayout>

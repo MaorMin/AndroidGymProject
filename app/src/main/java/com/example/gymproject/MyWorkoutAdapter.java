@@ -34,7 +34,6 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
     public class MyWorkoutViewHolder extends RecyclerView.ViewHolder{
 
         TextView workoutName;
-        TextView workoutSubtext;
         ImageView workoutImg;
         ImageView recycleBin;
 

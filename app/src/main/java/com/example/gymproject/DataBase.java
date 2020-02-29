@@ -199,6 +199,18 @@ public class DataBase {
 
     }
 
+    public void removeExe(String workoutName ,int position){
+        FirebaseUser userId =  mAuth.getCurrentUser();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+
+        ref.child("Users/" + userId.getUid() + "/Workouts/" + workoutName + "/exeList/" + position).removeValue();
+
+    }
+
+
+    public void getWorkouts(final List<Workout> workouts,final MyWorkoutAdapter myWorkoutAdapter){
+        FirebaseUser userId =  mAuth.getCurrentUser();
     public void getWorkouts(final List<Workout> workouts, final MyWorkoutAdapter myWorkoutAdapter) {
         FirebaseUser userId = mAuth.getCurrentUser();
 
