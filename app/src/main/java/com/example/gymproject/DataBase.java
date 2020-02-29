@@ -199,8 +199,8 @@ public class DataBase {
 
     }
 
-    public void removeExe(String workoutName ,int position){
-        FirebaseUser userId =  mAuth.getCurrentUser();
+    public void removeExe(String workoutName, int position) {
+        FirebaseUser userId = mAuth.getCurrentUser();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
@@ -209,9 +209,8 @@ public class DataBase {
     }
 
 
-    public void getWorkouts(final List<Workout> workouts,final MyWorkoutAdapter myWorkoutAdapter){
-        FirebaseUser userId =  mAuth.getCurrentUser();
-    public void getWorkouts(final List<Workout> workouts, final MyWorkoutAdapter myWorkoutAdapter) {
+
+    public void getWorkouts ( final List<Workout> workouts, final MyWorkoutAdapter myWorkoutAdapter){
         FirebaseUser userId = mAuth.getCurrentUser();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -233,12 +232,10 @@ public class DataBase {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
-
         });
     }
 
-    public void getMyDetails(final MyDetails myDetails, final UpdateDetails updateDetails) {
+    public void getMyDetails ( final MyDetails myDetails, final UpdateDetails updateDetails){
 
         FirebaseUser userId = mAuth.getCurrentUser();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -264,6 +261,9 @@ public class DataBase {
         });
     }
 }
+
+
+
 
 
 
