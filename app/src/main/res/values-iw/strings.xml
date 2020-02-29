@@ -59,9 +59,9 @@
     <string name="last_name_required">אנא הכנס/י שם משפחה</string>
     <string name="details_save">הפרטים שלך נשמרו</string>
     <string name="password_recovery">סיסמה חדשה נשלחה למייל שלך</string>
-    <string name="enter_workout_name">Enter Workout Name</string>
-    <string name="add_new_workout">Add new workout:</string>
-    <string name="select_image">Select image:</string>
+    <string name="enter_workout_name">הכנס שם לתוכנית האימונים:</string>
+    <string name="add_new_workout">הוסף תוכנית אימון חדשה:</string>
+    <string name="select_image">בחר סוג אימון:</string>
     <string name="add">הוסף</string>
     <string name="string_length">אנא הכנס\\י פחות תווים</string>
     <string name="height_rquiered">אנא הכנס/י גובה</string>

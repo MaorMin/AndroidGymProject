@@ -21,6 +21,7 @@ public class MainMenu extends AppCompatActivity {
     private LinearLayout myWorkoutBtn;
     private Button logoffBtn;
     LinearLayout weeklyActivityBtn;
+    LinearLayout updateDetailsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,5 +79,17 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        updateDetailsBtn = findViewById(R.id.update_details_btn);
+
+        updateDetailsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, UpdateDetails.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }
