@@ -91,10 +91,7 @@ public class MyWorkoutPage extends AppCompatActivity {
                 workouts.remove(position);
                 myWorkoutAdapter.notifyItemRemoved(position);
                 dataBase.removeWorkout(name);
-
                 }
-
-
         });
 
         recyclerView.setAdapter(myWorkoutAdapter);
