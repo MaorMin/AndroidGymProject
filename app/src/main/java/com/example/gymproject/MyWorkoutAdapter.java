@@ -42,7 +42,6 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
             super(itemView);
 
             workoutName = itemView.findViewById(R.id.workout_name);
-            workoutSubtext = itemView.findViewById(R.id.workout_sub_text);
             workoutImg =  itemView.findViewById(R.id.workout_img);
             recycleBin = itemView.findViewById(R.id.workout_recycle_bin);
 
@@ -95,7 +94,6 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
 
         Workout workout = workouts.get(position);
         holder.workoutName.setText(workout.getName());
-      //  holder.workoutSubtext.setText(workout.getSubText());
         holder.workoutImg.setImageResource(workout.getImgId());
 
     }
@@ -104,4 +102,5 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
     public int getItemCount() {
         return workouts.size();
     }
+
 }
