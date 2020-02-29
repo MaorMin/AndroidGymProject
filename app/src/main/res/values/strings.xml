@@ -71,4 +71,10 @@
     <string name="select_image">Select image:</string>
     <string name="add">Add</string>
     <string name="logoff_btn">Logoff</string>
+    <string name="edit">Edit</string>
+    <string name="update">Update</string>
+    <string name="weight">Weight:</string>
+    <string name="sets">Sets:</string>
+    <string name="reps">Reps:</string>
+    <string name="kg">KG</string>
 </resources>

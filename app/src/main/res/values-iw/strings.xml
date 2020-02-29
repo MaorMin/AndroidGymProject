@@ -72,4 +72,9 @@
     <string name="language">שפה</string>
     <string name="Weight">משקל</string>
     <string name="logoff_btn">התנתק/י</string>
+    <string name="edit">Edit</string>
+    <string name="update">Update</string>
+    <string name="weight">Weight:</string>
+    <string name="sets">Sets:</string>
+    <string name="reps">Reps:</string>
 </resources>
