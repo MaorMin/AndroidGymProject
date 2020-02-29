@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="Gender">
+        <item>זכר</item>
+        <item>נקבה</item>
+    </string-array>
     <string name="app_name">GymProject</string>
     <string name="reg_btn">הרשמה</string>
     <string name="mail_txt">הכנס/י אימייל</string>

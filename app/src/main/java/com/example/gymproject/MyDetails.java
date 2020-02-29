@@ -8,12 +8,12 @@ public class MyDetails {
     private double fat_percent;
     private String gender;
 
-    public MyDetails(double height, double weight, double age,double fat_percent){
+    public MyDetails(double height, double weight, double age,double fat_percent,String gender){
         this.height = height;
         this.weight = weight;
         this.age = age;
         this.fat_percent = fat_percent;
-      //  this.gender=gender;
+        this.gender=gender;
     }
 
     public MyDetails(){
@@ -21,7 +21,7 @@ public class MyDetails {
         this.weight = 0.0;
         this.age = 0.0;
         this.fat_percent = 0.0;
-        this.gender = "male";
+        this.gender = "Male";
     }
 
     public double getHeight() {
