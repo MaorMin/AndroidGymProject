@@ -19,8 +19,6 @@ public class Calendar extends AppCompatActivity {
 
 
     private ListView listView;
-    private CalendarView calendarView;
-    public GregorianCalendar cal_month;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
