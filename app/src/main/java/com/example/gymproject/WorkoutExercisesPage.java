@@ -4,11 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,15 +26,30 @@ public class WorkoutExercisesPage extends AppCompatActivity {
 
     private static List<Exercise> exercises;
     private ImageView addExeBtn;
+    private String workoutName;
+    private DataBase dataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_exercises_page);
 
+        dataBase = DataBase.getInstance();
+
+        Intent intent = getIntent();
+
+        int position = intent.getIntExtra("position",0);
+        workoutName = MyWorkoutPage.workouts.get(position).getName();
+
+
+        TextView workoutNameTextView = findViewById(R.id.workout_name_header);
+
+        workoutNameTextView.setText(workoutName);
+
+
         addExeBtn = findViewById(R.id.add_workout_exe_btn);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_workout_exercise);
+        final RecyclerView recyclerView = findViewById(R.id.recycler_workout_exercise);
         recyclerView.setHasFixedSize(true);
 
         recyclerView.setLayoutManager( new LinearLayoutManager( this));
@@ -74,6 +98,7 @@ public class WorkoutExercisesPage extends AppCompatActivity {
             public void onDeleteListener(int position) {
                 exercises.remove(position);
                 workoutExerciseAdapter.notifyItemRemoved(position);
+                dataBase.removeExe(workoutName, position);
             }
 
             @Override
@@ -82,6 +107,26 @@ public class WorkoutExercisesPage extends AppCompatActivity {
                     img.setVisibility(View.GONE);
             }
 
+            @Override
+            public void onEditListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets) {
+                editBtn.setVisibility(View.GONE);
+                updateBtn.setVisibility(View.VISIBLE);
+                weight.setInputType(InputType.TYPE_CLASS_NUMBER);
+                reps.setInputType(InputType.TYPE_CLASS_NUMBER);
+                sets.setInputType(InputType.TYPE_CLASS_NUMBER);
+            }
+
+            @Override
+            public void onUpdateListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets) {
+                updateBtn.setVisibility(View.GONE);
+                editBtn.setVisibility(View.VISIBLE);
+                weight.setInputType(InputType.TYPE_NULL);
+                reps.setInputType(InputType.TYPE_NULL);
+                sets.setInputType(InputType.TYPE_NULL);
+                closeKeyboard();
+                Toast.makeText(WorkoutExercisesPage.this, WorkoutExercisesPage.this.getString(R.string.details_save), Toast.LENGTH_SHORT).show();
+
+            }
         });
 
 
@@ -90,7 +135,27 @@ public class WorkoutExercisesPage extends AppCompatActivity {
 
     }
 
+    private void closeKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
     public static void setExercisesList(List<Exercise> exerciseList){
         exercises = new ArrayList<>(exerciseList);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            Intent intent = new Intent(WorkoutExercisesPage.this, MyWorkoutPage.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }

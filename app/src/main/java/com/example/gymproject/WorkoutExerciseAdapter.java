@@ -1,8 +1,12 @@
 package com.example.gymproject;
 
+import android.text.InputType;
+import android.text.style.BulletSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +28,8 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
         void onWorkoutExerciseLongClicked(int position, View view, ImageView recycleBin);
         void onDeleteListener(int position);
         void onClickListener(ImageView img);
+        void onEditListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets);
+        void onUpdateListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets);
 
     }
 
@@ -39,14 +45,16 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
 
         TextView exeName;
         TextView bodyPart;
-        TextView weight;
-        TextView sets;
-        TextView reps;
+        EditText weight;
+        EditText sets;
+        EditText reps;
         ImageView exeImg;
         ImageView expandCard;
         ImageView collapseCard;
         LinearLayout expandableLayout;
         ImageView recycleBin;
+        Button editBtn;
+        Button updateBtn;
 
         public WorkoutExerciseViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +69,8 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
             collapseCard = itemView.findViewById(R.id.exercise_collapse_btn);
             expandableLayout = itemView.findViewById(R.id.expandable_layout);
             recycleBin = itemView.findViewById(R.id.recycle_bin);
+            editBtn = itemView.findViewById(R.id.edit_exe);
+            updateBtn = itemView.findViewById(R.id.update_exe);
 
 
             expandCard.setOnClickListener(new View.OnClickListener(){
@@ -110,6 +120,26 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
                 }
             });
 
+            editBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onEditListener(editBtn,updateBtn, weight, reps, sets);
+                    }
+                }
+            });
+
+            updateBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onUpdateListener(editBtn,updateBtn, weight, reps, sets);
+                    }
+                }
+            });
+
+
+
 
         }
     }
@@ -131,9 +161,12 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
         holder.exeName.setText(exercise.getName());
         holder.exeImg.setImageResource(exercise.getExeImgId());
         holder.bodyPart.setText(exercise.getBodyPart());
-        holder.weight.setText("Weight:" + exercise.getWeight() + "KG");
-        holder.sets.setText("Sets:" + exercise.getSets());
-        holder.reps.setText("Reps:" + exercise.getReps());
+        holder.weight.setText(exercise.getWeight() + "");
+        holder.sets.setText(exercise.getSets()+"");
+        holder.reps.setText(exercise.getReps()+"");
+        holder.weight.setInputType(InputType.TYPE_NULL);
+        holder.sets.setInputType(InputType.TYPE_NULL);
+        holder.reps.setInputType(InputType.TYPE_NULL);
 
     }
 

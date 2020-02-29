@@ -72,6 +72,11 @@
     <string name="language">שפה</string>
     <string name="Weight">משקל</string>
     <string name="logoff_btn">התנתק/י</string>
+    <string name="edit">Edit</string>
+    <string name="update">Update</string>
+    <string name="weight">Weight:</string>
+    <string name="sets">Sets:</string>
+    <string name="reps">Reps:</string>
     <string name="age">גיל</string>
     <string name="height">גובה</string>
     <string name="percent_body_fat">אחוזי שומן בגוף</string>

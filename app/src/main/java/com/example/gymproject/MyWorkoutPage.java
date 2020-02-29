@@ -72,8 +72,9 @@ public class MyWorkoutPage extends AppCompatActivity {
             public void onClickListener(int position) {
                 WorkoutExercisesPage.setExercisesList(workouts.get(position).getExeList());
                 Intent intent = new Intent(MyWorkoutPage.this, WorkoutExercisesPage.class);
-                startActivity(intent);
                 intent.putExtra("position", position);
+                startActivity(intent);
+
             }
             @Override
             public void onWorkoutLongClicked(int position, View view, ImageView recycleBin) {
