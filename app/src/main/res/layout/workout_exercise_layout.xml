@@ -52,53 +52,65 @@
                     />
             </RelativeLayout>
 
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="start|center_vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="Exercise name"
-                    android:textColor="@android:color/black"
-                    android:id="@+id/workout_exercise_name"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/black"
-                    android:text="body Part"
-                    android:id="@+id/workout_exercise_body_part"/>
-
-            </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_height="match_parent">
 
-                <ImageView
-                android:layout_width="34dp"
-                android:layout_height="34dp"
-                android:src="@drawable/ic_keyboard_arrow_down_black_18dp"
-                android:layout_gravity="end"
-                android:id="@+id/exercise_expand_btn"/>
 
-                <ImageView
-                    android:layout_width="34dp"
-                    android:layout_height="34dp"
-                    android:src="@drawable/ic_keyboard_arrow_up_black_18dp"
-                    android:layout_gravity="end"
-                    android:id="@+id/exercise_collapse_btn"
-                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical"
+                    android:gravity="start|center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Exercise name"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/workout_exercise_name"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/black"
+                        android:text="body Part"
+                        android:id="@+id/workout_exercise_body_part"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:src="@drawable/ic_keyboard_arrow_down_black_18dp"
+                        android:layout_gravity="end"
+                        android:id="@+id/exercise_expand_btn"/>
+
+                    <ImageView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:src="@drawable/ic_keyboard_arrow_up_black_18dp"
+                        android:layout_gravity="end"
+                        android:id="@+id/exercise_collapse_btn"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
 
             </LinearLayout>
+
 
 
 
@@ -131,7 +143,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/exercise_weight"
-
                         />
                     <TextView
                         android:layout_width="wrap_content"
