@@ -3,6 +3,7 @@ package com.example.gymproject;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,13 @@ import java.util.List;
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
 
     private List<Exercise> exercises;
+    private ExercisesListener listener;
+
+    interface ExercisesListener{
+        void onCheckBoxListener(int position);
+    }
+
+    public void setLisener(ExercisesListener exercisesListener){this.listener = exercisesListener;};
 
     public ExerciseAdapter(List<Exercise> exercises) {
         this.exercises = exercises;
@@ -23,12 +31,23 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
         TextView exeName;
         ImageView exeImg;
+        CheckBox checkBox;
 
         public ExerciseViewHolder(@NonNull View itemView) {
             super(itemView);
 
             exeName = itemView.findViewById(R.id.exercise_name);
             exeImg =  itemView.findViewById(R.id.exercise_img);
+            checkBox = itemView.findViewById(R.id.exe_checkbox);
+
+
+            checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null)
+                        listener.onCheckBoxListener(getAdapterPosition());
+                }
+            });
         }
     }
 

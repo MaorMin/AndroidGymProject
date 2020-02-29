@@ -55,13 +55,6 @@
                 android:textColor="@android:color/black"
                 android:id="@+id/workout_name"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="@android:color/black"
-                android:text="sub_text"
-                android:id="@+id/workout_sub_text"/>
 
         </LinearLayout>
 
