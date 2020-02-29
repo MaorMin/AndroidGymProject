@@ -20,6 +20,7 @@ public class MainMenu extends AppCompatActivity {
 
     private LinearLayout myWorkoutBtn;
     private Button logoffBtn;
+    LinearLayout weeklyActivityBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,17 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(MainMenu.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        weeklyActivityBtn = findViewById(R.id.weekly_activates_btn);
+
+        weeklyActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainMenu.this,Calendar.class);
                 startActivity(intent);
             }
         });

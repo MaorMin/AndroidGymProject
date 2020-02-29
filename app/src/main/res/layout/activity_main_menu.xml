@@ -71,7 +71,7 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:text="@string/logoff_btn"
             android:textAllCaps="false"
             android:background="#6DFFFFFF"

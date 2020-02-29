@@ -11,13 +11,9 @@
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <ProgressBar
-            android:id="@+id/progressBar2"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender"
+            android:showWeekNumber="false" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
@@ -25,8 +21,13 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:id="@+id/list_item"
+
+               />
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </RadioGroup>
+
+
 </LinearLayout>
