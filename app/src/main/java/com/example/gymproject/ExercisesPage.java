@@ -42,31 +42,31 @@ public class ExercisesPage extends AppCompatActivity {
 
         final List<Exercise> exercises = new ArrayList<>();
 
-        exercises.add(new Exercise("@Breeding_dumbbells_lying", R.drawable.breeding_dumbbells_lying));
-        exercises.add(new Exercise("@climbs_the_trunk", R.drawable.climbs_the_trunk));
-        exercises.add(new Exercise("Concentrated bending arms", R.drawable.concentrated_bending_arms));
-        exercises.add(new Exercise("dumbbell hammer curls", R.drawable.curl_with_a_dumbbell));
-        exercises.add(new Exercise("Curls on the bench", R.drawable.curls_on_the_bench));
-        exercises.add(new Exercise("Dips", R.drawable.dips));
-        exercises.add(new Exercise("Dumbbell bench press", R.drawable.dumbbell_bench_press));
-        exercises.add(new Exercise("Bent-over dumbbell rows", R.drawable.end_dumbbell));
-        exercises.add(new Exercise("Lat Pulldowens", R.drawable.end_of_the_upper_block_in_front_of_him));
-        exercises.add(new Exercise("End of the upper block the neck", R.drawable.end_of_the_upper_block_the_neck));
-        exercises.add(new Exercise("Extension arms with a dumbbell", R.drawable.extension_arms_with_a_dumbbell));
-        exercises.add(new Exercise("Tricep push down", R.drawable.extension_of_hands));
-        exercises.add(new Exercise("Flexion simulator leg", R.drawable.flexion_simulator_leg));
-        exercises.add(new Exercise("Bicep free", R.drawable.inclined_leg));
-        exercises.add(new Exercise("Leg extension", R.drawable.leg_extension));
-        exercises.add(new Exercise("Lunges with dumbbells", R.drawable.lunges_with_dumbbells));
-        exercises.add(new Exercise("Middle cable fly", R.drawable.middle_cable_fly));
-        exercises.add(new Exercise("Bench press", R.drawable.press_of_a_bar));
-        exercises.add(new Exercise("Pull ups", R.drawable.pulling_up_wide_grip_hand));
-        exercises.add(new Exercise("pull_on_deltoids", R.drawable.pull_on_deltoids));
-        exercises.add(new Exercise("Reduction of arms", R.drawable.reduction_of_arms));
-        exercises.add(new Exercise("Run", R.drawable.run));
-        exercises.add(new Exercise("seated chests", R.drawable.seated_chests));
-        exercises.add(new Exercise("Standing calf raises", R.drawable.standing_calf_raises));
-        exercises.add(new Exercise("Straightening simulator wheel", R.drawable.straightening_simulator_wheel));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.breeding_dumbbells_lying), R.drawable.breeding_dumbbells_lying));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.climbs_the_trunk), R.drawable.climbs_the_trunk));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.concentrated_bending_arms), R.drawable.concentrated_bending_arms));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.curl_with_a_dumbbell), R.drawable.curl_with_a_dumbbell));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.curls_on_the_bench), R.drawable.curls_on_the_bench));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.dips), R.drawable.dips));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.dumbbell_bench_press), R.drawable.dumbbell_bench_press));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.bent_over_dumbbell_rows), R.drawable.end_dumbbell));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.lat_pulldowens), R.drawable.end_of_the_upper_block_in_front_of_him));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.lat_pulldowens_block_the_neck), R.drawable.end_of_the_upper_block_the_neck));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.extension_arms_with_a_dumbbell), R.drawable.extension_arms_with_a_dumbbell));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.tricep_push_down), R.drawable.extension_of_hands));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.flexion_simulator_leg), R.drawable.flexion_simulator_leg));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.bicep_free), R.drawable.inclined_leg));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.leg_extension), R.drawable.leg_extension));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.lunges_with_dumbbells), R.drawable.lunges_with_dumbbells));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.middle_cable_fly), R.drawable.middle_cable_fly));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.bench_press), R.drawable.press_of_a_bar));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.pull_ups), R.drawable.pulling_up_wide_grip_hand));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.pull_on_deltoids), R.drawable.pull_on_deltoids));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.reduction_of_arms), R.drawable.reduction_of_arms));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.run), R.drawable.run));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.seated_chests), R.drawable.seated_chests));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.standing_calf_raises), R.drawable.standing_calf_raises));
+        exercises.add(new Exercise(ExercisesPage.this.getString(R.string.straightening_simulator_wheel), R.drawable.straightening_simulator_wheel));
 
 
         final int finalPosition = position;
