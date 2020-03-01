@@ -56,16 +56,6 @@ public class MyWorkoutPage extends AppCompatActivity {
         final MyWorkoutAdapter myWorkoutAdapter = new MyWorkoutAdapter((workouts));
         dataBase.getWorkouts(workouts, myWorkoutAdapter);
 
-//        Workout workout = new Workout("demo", R.drawable.a_img);
-//        List<Exercise> exlist = new ArrayList<Exercise>();
-//        exlist.add(new Exercise("Bicep pull", R.drawable.bicsep_machine));
-//        exlist.add(new Exercise("Incline bench press", R.drawable.incline_bench_press));
-//        exlist.add(new Exercise("Bicep free", R.drawable.bicsep_standing));
-//        workout.setExeList(exlist);
-//
-//        dataBase.addWorkout(workout);
-
-
 
         myWorkoutAdapter.setListener(new MyWorkoutAdapter.MyWorkoutListener() {
             @Override
@@ -97,6 +87,7 @@ public class MyWorkoutPage extends AppCompatActivity {
 
         recyclerView.setAdapter(myWorkoutAdapter);
     }
+    
 
     @Override
     public void onBackPressed() {
