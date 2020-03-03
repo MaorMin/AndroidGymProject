@@ -72,11 +72,11 @@
     <string name="language">שפה</string>
     <string name="Weight">משקל</string>
     <string name="logoff_btn">התנתק/י</string>
-    <string name="edit">Edit</string>
-    <string name="update">Update</string>
-    <string name="weight">Weight:</string>
-    <string name="sets">Sets:</string>
-    <string name="reps">Reps:</string>
+    <string name="edit">ערוך</string>
+    <string name="update">עדכן</string>
+    <string name="weight">משקל:</string>
+    <string name="sets">סטים:</string>
+    <string name="reps">חזרות:</string>
     <string name="age">גיל</string>
     <string name="height">גובה</string>
     <string name="percent_body_fat">אחוזי שומן בגוף</string>
@@ -106,4 +106,6 @@
     <string name="seated_chests">לחיצת חזה בישיבה</string>
     <string name="standing_calf_raises">עליית בהונות</string>
     <string name="straightening_simulator_wheel">גלגול קדימה על הברכיים</string>
+    <string name="my_workouts">האימונים שלי</string>
+    <string name="workout_name">שם תרגיל</string>
 </resources>

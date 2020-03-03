@@ -103,4 +103,18 @@
     <string name="seated_chests">Seated chests</string>
     <string name="standing_calf_raises">Standing calf raises</string>
     <string name="straightening_simulator_wheel">Straightening simulator wheel</string>
+
+
+    <string-array name="language">
+    <item>English</item>
+    <item>Hebrew</item>
+</string-array>
+
+    <string-array name="Weight">
+        <item>kg</item>
+        <item>lb</item>
+    </string-array>
+    <string name="my_workouts">My Workouts</string>
+    <string name="workout_name">Workout Name</string>
+
 </resources>

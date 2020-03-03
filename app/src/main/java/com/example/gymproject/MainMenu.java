@@ -22,6 +22,7 @@ public class MainMenu extends AppCompatActivity {
     private Button logoffBtn;
     LinearLayout weeklyActivityBtn;
     LinearLayout updateDetailsBtn;
+    LinearLayout preferencesBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,16 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, UpdateDetails.class);
+                startActivity(intent);
+            }
+        });
+
+        preferencesBtn = findViewById(R.id.preferences_btn);
+
+        preferencesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, Settings.class);
                 startActivity(intent);
             }
         });
