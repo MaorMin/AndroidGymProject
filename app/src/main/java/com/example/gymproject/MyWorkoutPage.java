@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +34,7 @@ public class MyWorkoutPage extends AppCompatActivity {
     private HashMap<String, Exercise> exercises;
     DataBase dataBase;
     ImageView addWorkoutBtn;
+    private ProgressBar progressBar;
     final static List<Workout> workouts = new ArrayList<>();
 
 
@@ -41,11 +45,14 @@ public class MyWorkoutPage extends AppCompatActivity {
 
         dataBase = DataBase.getInstance();
         addWorkoutBtn = findViewById(R.id.add_workout_top_btn);
+        progressBar = findViewById(R.id.workout_progress_bar);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_workout);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager( new LinearLayoutManager( this));
 
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.getIndeterminateDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.MULTIPLY);
 
         addWorkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +64,12 @@ public class MyWorkoutPage extends AppCompatActivity {
 
 
         final MyWorkoutAdapter myWorkoutAdapter = new MyWorkoutAdapter((workouts));
-        dataBase.getWorkouts(workouts, myWorkoutAdapter);
+        dataBase.getWorkouts(workouts, myWorkoutAdapter, new progressCallback() {
+            @Override
+            public void onFinish() {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
 
 
         myWorkoutAdapter.setListener(new MyWorkoutAdapter.MyWorkoutListener() {
@@ -101,6 +113,10 @@ public class MyWorkoutPage extends AppCompatActivity {
         Intent setIntent = new Intent(MyWorkoutPage.this,MainMenu.class);
         startActivity(setIntent);
         finish();
+    }
+
+    public interface progressCallback{
+        void onFinish();
     }
 
 }

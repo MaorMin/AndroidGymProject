@@ -211,7 +211,7 @@ public class DataBase {
 
 
 
-    public void getWorkouts ( final List<Workout> workouts, final MyWorkoutAdapter myWorkoutAdapter){
+    public void getWorkouts (final List<Workout> workouts, final MyWorkoutAdapter myWorkoutAdapter, final MyWorkoutPage.progressCallback callback){
         FirebaseUser userId = mAuth.getCurrentUser();
         workouts.clear();
 
@@ -228,6 +228,7 @@ public class DataBase {
                 synchronized (myWorkoutAdapter) {
                     myWorkoutAdapter.notifyDataSetChanged();
                 }
+                callback.onFinish();
             }
 
             @Override
@@ -261,6 +262,16 @@ public class DataBase {
 
             }
         });
+    }
+
+    public void updateExe(String workoutName, Exercise exercise){
+        FirebaseUser userId = this.mAuth.getCurrentUser();
+        updateUI(userId);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(
+                "Users/" + userId.getUid() + "/Workouts/" + workoutName + "/exeList/" + exercise.getName());
+        ref.setValue(exercise);
+
+
     }
 }
 

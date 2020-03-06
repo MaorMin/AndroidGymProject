@@ -117,13 +117,21 @@ public class WorkoutExercisesPage extends AppCompatActivity {
             }
 
             @Override
-            public void onUpdateListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets) {
+            public void onUpdateListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets, Exercise exercise) {
                 updateBtn.setVisibility(View.GONE);
                 editBtn.setVisibility(View.VISIBLE);
                 weight.setInputType(InputType.TYPE_NULL);
                 reps.setInputType(InputType.TYPE_NULL);
                 sets.setInputType(InputType.TYPE_NULL);
                 closeKeyboard();
+
+                exercise.setWeight(Integer.parseInt(weight.getText().toString()));
+                exercise.setReps(Integer.parseInt(reps.getText().toString()));
+                exercise.setSets(Integer.parseInt(sets.getText().toString()));
+
+                dataBase.updateExe(workoutName,exercise);
+
+
                 Toast.makeText(WorkoutExercisesPage.this, WorkoutExercisesPage.this.getString(R.string.details_save), Toast.LENGTH_SHORT).show();
 
             }

@@ -29,7 +29,7 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
         void onDeleteListener(int position);
         void onClickListener(ImageView img);
         void onEditListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets);
-        void onUpdateListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets);
+        void onUpdateListener(Button editBtn, Button updateBtn, EditText weight, EditText reps, EditText sets, Exercise exercise);
 
     }
 
@@ -133,7 +133,7 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
                 @Override
                 public void onClick(View v) {
                     if (listener != null) {
-                        listener.onUpdateListener(editBtn,updateBtn, weight, reps, sets);
+                        listener.onUpdateListener(editBtn,updateBtn, weight, reps, sets, exercises.get(getAdapterPosition()));
                     }
                 }
             });
