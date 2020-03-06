@@ -96,10 +96,10 @@ public class WorkoutExercisesPage extends AppCompatActivity {
 
             @Override
             public void onDeleteListener(int position) {
+                dataBase.removeExe(workoutName, exercises.get(position).getName());
                 exercises.remove(position);
                 workoutExerciseAdapter.notifyItemRemoved(position);
-                dataBase.removeExe(workoutName, position);
-            }
+                            }
 
             @Override
             public void onClickListener(ImageView img) {

@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 public class ExercisesPage extends AppCompatActivity {
@@ -73,14 +75,20 @@ public class ExercisesPage extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 for (Exercise ex : exercises) {
                     if (ex.isSelected()) {
-                        ;
-                        workout.getExeList().add(ex);
+
+                        workout.getExeList().put(ex.getName(),ex);
                     }
                     dataBase.addExercise(workout.getExeList(), workout.getName());
                 }
-                WorkoutExercisesPage.setExercisesList(workout.getExeList());
+
+                HashMap<String, Exercise> exeHashMap = workout.getExeList();
+                Collection<Exercise> values = exeHashMap.values();
+                ArrayList<Exercise> exeList = new ArrayList<Exercise>(values);
+                WorkoutExercisesPage.setExercisesList(exeList);
+
                 Intent intent = new Intent(ExercisesPage.this, WorkoutExercisesPage.class);
                 startActivity(intent);
                 intent.putExtra("position", finalPosition);

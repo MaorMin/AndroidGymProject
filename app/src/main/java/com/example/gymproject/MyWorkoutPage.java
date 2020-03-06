@@ -19,13 +19,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import static com.facebook.AccessTokenManager.TAG;
 
 
 public class MyWorkoutPage extends AppCompatActivity {
 
-    private List<Exercise> exercises;
+    private HashMap<String, Exercise> exercises;
     DataBase dataBase;
     ImageView addWorkoutBtn;
     final static List<Workout> workouts = new ArrayList<>();
@@ -60,7 +63,11 @@ public class MyWorkoutPage extends AppCompatActivity {
         myWorkoutAdapter.setListener(new MyWorkoutAdapter.MyWorkoutListener() {
             @Override
             public void onClickListener(int position) {
-                WorkoutExercisesPage.setExercisesList(workouts.get(position).getExeList());
+                HashMap<String, Exercise> exeHashMap = workouts.get(position).getExeList();
+                //removeDeletedExercises(exeList);
+                Collection<Exercise> values = exeHashMap.values();
+                ArrayList<Exercise> exeList = new ArrayList<Exercise>(values);
+                WorkoutExercisesPage.setExercisesList(exeList);
                 Intent intent = new Intent(MyWorkoutPage.this, WorkoutExercisesPage.class);
                 intent.putExtra("position", position);
                 startActivity(intent);
@@ -87,7 +94,7 @@ public class MyWorkoutPage extends AppCompatActivity {
 
         recyclerView.setAdapter(myWorkoutAdapter);
     }
-    
+
 
     @Override
     public void onBackPressed() {

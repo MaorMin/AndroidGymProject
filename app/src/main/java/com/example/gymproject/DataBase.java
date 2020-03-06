@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.EventListener;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.facebook.AccessTokenManager.TAG;
@@ -113,7 +114,7 @@ public class DataBase {
         });
     }
 
-    public void addExercise(List<Exercise> exercises, String workout) {
+    public void addExercise(HashMap<String,Exercise> exercises, String workout) {
         FirebaseUser userId = this.mAuth.getCurrentUser();
         updateUI(userId);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/" + userId.getUid() + "/Workouts/" + workout + "/exeList");
@@ -199,12 +200,12 @@ public class DataBase {
 
     }
 
-    public void removeExe(String workoutName, int position) {
+    public void removeExe(String workoutName, String exeName) {
         FirebaseUser userId = mAuth.getCurrentUser();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
-        ref.child("Users/" + userId.getUid() + "/Workouts/" + workoutName + "/exeList/" + position).removeValue();
+        ref.child("Users/" + userId.getUid() + "/Workouts/" + workoutName + "/exeList/" + exeName).removeValue();
 
     }
 
@@ -212,6 +213,7 @@ public class DataBase {
 
     public void getWorkouts ( final List<Workout> workouts, final MyWorkoutAdapter myWorkoutAdapter){
         FirebaseUser userId = mAuth.getCurrentUser();
+        workouts.clear();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 

@@ -73,8 +73,6 @@ public class MyWorkoutAdapter extends RecyclerView.Adapter<MyWorkoutAdapter.MyWo
                 }
             });
 
-
-
         }
     }
 

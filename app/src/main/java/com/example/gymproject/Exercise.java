@@ -9,6 +9,7 @@ public class Exercise {
     private int sets;
     private int reps;
     private boolean isSelected;
+    private boolean isDeleted;
 
 
     public Exercise(String name, int exeImgId, String bodyPart, int weight, int sets, int reps) {
@@ -19,6 +20,7 @@ public class Exercise {
         this.sets = sets;
         this.reps = reps;
         this.isSelected = false;
+        this.isDeleted = false;
     }
 
     public Exercise(String name, int exeImgId){
@@ -29,9 +31,18 @@ public class Exercise {
         this.sets = 0;
         this.reps = 0;
         this.isSelected = false;
+        this.isDeleted = false;
     }
 
     public Exercise(){}
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 
     public String getName() {
         return name;

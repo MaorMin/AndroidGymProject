@@ -1,21 +1,22 @@
 package com.example.gymproject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Workout {
 
     private String name;
     private int imgId;
-    private List<Exercise> exeList;
+    private HashMap<String, Exercise> exeList;
 
     public Workout(String name, int imgId) {
         this.name = name;
         this.imgId = imgId;
-        this.exeList = new ArrayList<>();
+        this.exeList = new HashMap<>();
     }
 
-    public Workout(){  this.exeList = new ArrayList<>(); }
+    public Workout(){  this.exeList = new HashMap<>(); }
 
     public String getName() {
         return name;
@@ -33,11 +34,11 @@ public class Workout {
         this.imgId = imgId;
     }
 
-    public List<Exercise> getExeList() {
+    public HashMap<String, Exercise> getExeList() {
         return exeList;
     }
 
-    public void setExeList(List<Exercise> exeList) {
+    public void setExeList(HashMap<String, Exercise> exeList) {
         this.exeList = exeList;
     }
 }
