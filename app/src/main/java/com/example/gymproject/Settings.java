@@ -1,6 +1,68 @@
 package com.example.gymproject;
 
-public class Settings {
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.settings);
+
+        Spinner spinner1 = findViewById(R.id.spinner1);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.language, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter);
+        spinner1.setOnItemSelectedListener(this);
+
+        String language_app = spinner1.getSelectedItem().toString();
+        if(language_app!=null) {
+            if (language_app.equals("Hebrew")) {
+                //something..
+
+            } else if (language_app.equals("English")) {
+                //something...
+            }
+        }
+
+        Spinner spinner2 = findViewById(R.id.spinner2);
+
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.Weight, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
+        spinner2.setOnItemSelectedListener(this);
+
+        String weight_app = spinner2.getSelectedItem().toString();
+        if(weight_app.equals("Kg")){
+            //something..
+        }
+        else if(weight_app.equals("Lb")){
+            //something...
+        }
+
+
+
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

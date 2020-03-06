@@ -78,6 +78,43 @@
     <string name="age">Age</string>
     <string name="height">Height</string>
     <string name="percent_body_fat">percent Body Fat</string>
-    <string name="Breeding_dumbbells_lying">Breeding dumbbells lying</string>
+    <string name="breeding_dumbbells_lying">Breeding dumbbells lying</string>
     <string name="climbs_the_trunk">Climbs the trunk</string>
+    <string name="dumbbell_bench_press">Dumbbell bench press</string>
+    <string name="concentrated_bending_arms">Concentrated bending arms</string>
+    <string name="curl_with_a_dumbbell">Curl with a dumbbell</string>
+    <string name="curls_on_the_bench">Curls on the bench</string>
+    <string name="dips">Dips</string>
+    <string name="bent_over_dumbbell_rows">Bent-over dumbbell rows</string>
+    <string name="lat_pulldowens">Lat Pulldowens</string>
+    <string name="lat_pulldowens_block_the_neck">lat pulldowens block the neck</string>
+    <string name="extension_arms_with_a_dumbbell">Extension arms with a dumbbell</string>
+    <string name="tricep_push_down">Tricep push down</string>
+    <string name="flexion_simulator_leg">Flexion simulator leg</string>
+    <string name="bicep_free">Bicep free</string>
+    <string name="leg_extension">Leg extension</string>
+    <string name="lunges_with_dumbbells">Lunges with dumbbells</string>
+    <string name="middle_cable_fly">Middle cable fly</string>
+    <string name="bench_press">Bench press</string>
+    <string name="pull_ups">Pull ups</string>
+    <string name="pull_on_deltoids">Pull on deltoids</string>
+    <string name="reduction_of_arms">Reduction of arms</string>
+    <string name="run">Run</string>
+    <string name="seated_chests">Seated chests</string>
+    <string name="standing_calf_raises">Standing calf raises</string>
+    <string name="straightening_simulator_wheel">Straightening simulator wheel</string>
+
+
+    <string-array name="language">
+    <item>English</item>
+    <item>Hebrew</item>
+</string-array>
+
+    <string-array name="Weight">
+        <item>kg</item>
+        <item>lb</item>
+    </string-array>
+    <string name="my_workouts">My Workouts</string>
+    <string name="workout_name">Workout Name</string>
+
 </resources>

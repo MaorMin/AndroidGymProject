@@ -252,7 +252,7 @@ public class DataBase {
                 myDetails.setWeight(myDetails1.getWeight());
                 myDetails.setFat_percent(myDetails1.getFat_percent());
                 myDetails.setAge(myDetails1.getAge());
-                updateDetails.setValues();
+                //updateDetails.setValues();
                 Log.d("New details:", Double.toString(myDetails.getAge()));
             }
 
