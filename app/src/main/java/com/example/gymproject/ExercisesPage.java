@@ -23,6 +23,7 @@ public class ExercisesPage extends AppCompatActivity {
     private Button addBtn;
     private DataBase dataBase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +33,7 @@ public class ExercisesPage extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        int position = 0;
-        if (bundle != null) {
-            position = (int) bundle.get("position");
-        }
+        final int position = intent.getIntExtra("position",0);
         workout = MyWorkoutPage.workouts.get(position);
 
 
@@ -93,9 +91,9 @@ public class ExercisesPage extends AppCompatActivity {
                 WorkoutExercisesPage.setExercisesList(exeList);
 
                 Intent intent = new Intent(ExercisesPage.this, WorkoutExercisesPage.class);
-                startActivity(intent);
                 intent.putExtra("position", finalPosition);
-                finish();
+                startActivity(intent);
+//                finish();
             }
         });
 
