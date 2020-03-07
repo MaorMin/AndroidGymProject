@@ -72,7 +72,7 @@ public class ExercisesPage extends AppCompatActivity {
         exercises.add(new Exercise(ExercisesPage.this.getString(R.string.seated_chests), R.drawable.seated_chests));
         exercises.add(new Exercise(ExercisesPage.this.getString(R.string.standing_calf_raises), R.drawable.standing_calf_raises));
         exercises.add(new Exercise(ExercisesPage.this.getString(R.string.straightening_simulator_wheel), R.drawable.straightening_simulator_wheel));
-        
+
 
         final int finalPosition = position;
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +105,7 @@ public class ExercisesPage extends AppCompatActivity {
         exerciseAdapter.setLisener(new ExerciseAdapter.ExercisesListener() {
             @Override
             public void onCheckBoxListener(int position) {
-                exercises.get(position).setSelected(true);
+                exercises.get(position).setSelected(!exercises.get(position).isSelected());
             }
         });
         recyclerView.setAdapter(exerciseAdapter);

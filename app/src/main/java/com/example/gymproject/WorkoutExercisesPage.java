@@ -38,7 +38,7 @@ public class WorkoutExercisesPage extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        int position = intent.getIntExtra("position",0);
+        final int position = intent.getIntExtra("position",0);
         workoutName = MyWorkoutPage.workouts.get(position).getName();
 
 
@@ -58,6 +58,7 @@ public class WorkoutExercisesPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WorkoutExercisesPage.this, ExercisesPage.class);
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
         });

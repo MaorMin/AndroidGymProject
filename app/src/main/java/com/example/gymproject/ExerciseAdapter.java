@@ -67,6 +67,12 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         Exercise exercise = exercises.get(position);
         holder.exeName.setText(exercise.getName());
         holder.exeImg.setImageResource(exercise.getExeImgId());
+
+        if(exercise.isSelected())
+        holder.checkBox.setChecked(true);
+        else
+            holder.checkBox.setChecked(false);
+
     }
 
     @Override
