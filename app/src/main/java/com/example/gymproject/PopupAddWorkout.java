@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,11 +18,11 @@ public class PopupAddWorkout extends AppCompatActivity {
     private EditText workoutName;
     private int imageId;
     private Button addWorkoutBtn;
-    private ImageButton aBtn;
-    private ImageButton bBtn;
-    private ImageButton cBtn;
-    private ImageButton dBtn;
-    private ImageButton eBtn;
+    private RadioButton aBtn;
+    private RadioButton bBtn;
+    private RadioButton cBtn;
+    private RadioButton dBtn;
+    private RadioButton eBtn;
     DataBase dataBase;
 
     @Override
@@ -38,6 +40,8 @@ public class PopupAddWorkout extends AppCompatActivity {
         cBtn = findViewById(R.id.c_workout);
         dBtn = findViewById(R.id.d_workout);
         eBtn = findViewById(R.id.e_workout);
+
+
 
         aBtn.setOnClickListener(new View.OnClickListener() {
             @Override

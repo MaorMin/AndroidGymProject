@@ -73,50 +73,52 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         >
-        <LinearLayout
+        <RadioGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageButton
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_group"
+            android:orientation="horizontal">
+            <RadioButton
                 android:id="@+id/a_workout"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/a_img"
-                android:scaleType="fitCenter"
-                android:background="@drawable/workout_day_btn"/>
+                android:button="@drawable/a_img"
+                android:background="@drawable/workout_image_selector"/>
 
-            <ImageButton
+            <RadioButton
                 android:id="@+id/b_workout"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/b_img"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"/>
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/b_img"
+                android:background="@drawable/workout_image_selector"/>
 
-            <ImageButton
+            <RadioButton
                 android:id="@+id/c_workout"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/c_img"
                 android:scaleType="fitCenter"
-                android:background="@android:color/transparent"/>
+                android:button="@drawable/c_img"
+                android:background="@drawable/workout_image_selector"/>
 
-            <ImageButton
+            <RadioButton
                 android:id="@+id/d_workout"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/d_img"
                 android:scaleType="fitCenter"
-                android:background="@android:color/transparent"/>
+                android:button="@drawable/d_img"
+                android:background="@drawable/workout_image_selector"/>
 
-            <ImageButton
+            <RadioButton
                 android:id="@+id/e_workout"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/e_img"
                 android:scaleType="fitCenter"
-                android:background="@android:color/transparent"/>
+                android:button="@drawable/e_img"
+                android:background="@drawable/workout_image_selector"/>
 
-        </LinearLayout>
+        </RadioGroup>
     </HorizontalScrollView>
 
     </LinearLayout>

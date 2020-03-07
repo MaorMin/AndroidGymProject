@@ -6,13 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ExercisesPage extends AppCompatActivity {
 
@@ -69,7 +72,7 @@ public class ExercisesPage extends AppCompatActivity {
         exercises.add(new Exercise(ExercisesPage.this.getString(R.string.seated_chests), R.drawable.seated_chests));
         exercises.add(new Exercise(ExercisesPage.this.getString(R.string.standing_calf_raises), R.drawable.standing_calf_raises));
         exercises.add(new Exercise(ExercisesPage.this.getString(R.string.straightening_simulator_wheel), R.drawable.straightening_simulator_wheel));
-
+        
 
         final int finalPosition = position;
         addBtn.setOnClickListener(new View.OnClickListener() {
