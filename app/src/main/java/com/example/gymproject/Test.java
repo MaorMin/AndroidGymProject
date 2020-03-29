@@ -1,25 +1,23 @@
 package com.example.gymproject;
 
-import java.util.ArrayList;
-import java.util.List;
-import android.app.Activity;
+
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseUserMetadata;
+import java.util.Calendar;
 
 public class Test extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Spinner spinner;
+   Calendar calendar = Calendar.getInstance();
+//        calendar.set(year, month, dayOfMonth);
+//    int dayOfWeek = calendar.get(Calendarq.DAY_OF_WEEK);
 
 
     @Override

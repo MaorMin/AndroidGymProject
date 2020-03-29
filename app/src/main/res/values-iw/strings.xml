@@ -63,7 +63,7 @@
     <string name="add_new_workout">הוסף תוכנית אימון חדשה:</string>
     <string name="select_image">בחר סוג אימון:</string>
     <string name="add">הוסף</string>
-    <string name="string_length">אנא הכנס\\י פחות תווים</string>
+    <string name="string_length">אנא הכנס\י פחות תווים</string>
     <string name="height_rquiered">אנא הכנס/י גובה</string>
     <string name="weight_rquiered">אנא הכנס/י משקל</string>
     <string name="age_requiered">"אנא הכנס/י הגיל "</string>
@@ -108,4 +108,14 @@
     <string name="straightening_simulator_wheel">גלגול קדימה על הברכיים</string>
     <string name="my_workouts">האימונים שלי</string>
     <string name="workout_name">שם תרגיל</string>
+    <string name="zumba_event">זומבה:</string>
+    <string name="aerobic_event">אירובי:</string>
+    <string name="yoga_event">יוגה:</string>
+    <string name="pilates_event">פילאטיס:</string>
+    <string name="sculpting_event">עיצוב וחיטוב:</string>
+    <string name="HIT_event">אימון היט:</string>
+    <string name="workout_station_event">תחנות</string>
+    <string name="kick_box_event">קיקבוקס:</string>
+    <string name="TRX_event">טי אר אקס:</string>
+    <string name="no_activity_event">אין פעילות</string>
 </resources>

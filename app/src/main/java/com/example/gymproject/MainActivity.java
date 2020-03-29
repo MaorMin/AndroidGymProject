@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mCallbackManager = CallbackManager.Factory.create();
-        loginFbButton = findViewById(R.id.login_Fb_Btn);
+      //  loginFbButton = findViewById(R.id.login_Fb_Btn);
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        loginFbButton.setReadPermissions(Arrays.asList("email", "public_profile"));
+      //  loginFbButton.setReadPermissions(Arrays.asList("email", "public_profile"));
         // eyeVisionBtn = findViewById(R.id.eye_vision_btn);
         Button regBtn = findViewById(R.id.reg_btn);
         isVisible = false;
@@ -93,26 +93,26 @@ public class MainActivity extends AppCompatActivity {
 
         //-----sign in with facebook button----//
 
-        loginFbButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                handleFacebookAccessToken(loginResult.getAccessToken());
-
-            }
-
-            @Override
-            public void onCancel() {
-                Log.d(TAG, "facebook:onCancel");
-                // ...
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Log.d(TAG, "facebook:onError", error);
-                // ...
-            }
-        });
+//        loginFbButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+//            @Override
+//            public void onSuccess(LoginResult loginResult) {
+//                Log.d(TAG, "facebook:onSuccess:" + loginResult);
+//                handleFacebookAccessToken(loginResult.getAccessToken());
+//
+//            }
+//
+//            @Override
+//            public void onCancel() {
+//                Log.d(TAG, "facebook:onCancel");
+//                // ...
+//            }
+//
+//            @Override
+//            public void onError(FacebookException error) {
+//                Log.d(TAG, "facebook:onError", error);
+//                // ...
+//            }
+//        });
 
 
 //      @Override
@@ -251,7 +251,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // userDetails();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
 
@@ -266,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //        }
 
-        //  GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+  //       GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
 //        updateUI(currentUser);
 
@@ -299,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser currentUser) {
 
         if (currentUser != null) {
-            Intent intent = new Intent(MainActivity.this, MainMenu.class);
+           Intent intent = new Intent(MainActivity.this, MainMenu.class);
             startActivity(intent);
             finish();
         }
@@ -317,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            Log.d("Authentication succeed","Authentication succeed");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                             progressBarGoogleFacebook.setVisibility(View.GONE);
@@ -352,9 +352,9 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
 
-                            Intent intent = new Intent(MainActivity.this,MainMenu.class);
+                            Intent intent = new Intent(MainActivity.this,DetailsPage.class);
                             startActivity(intent);
-                           // finish();
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -379,6 +379,7 @@ public class MainActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
+                Log.d("google success login","");
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
@@ -386,9 +387,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (resultCode != 0) {
-                Intent intent = new Intent(MainActivity.this, MainMenu.class);
-                startActivity(intent);
-                finish();
+                //Intent intent = new Intent(MainActivity.this, MainMenu.class);
+             //startActivity(intent);
+               // finish();
             }
         }
         // -----sign out google accounts

@@ -155,13 +155,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/login_Fb_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                style="@style/FacebookLoginButton"
-                />
+
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/google_login_btn"

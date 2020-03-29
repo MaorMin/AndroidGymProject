@@ -1,9 +1,6 @@
 package com.example.gymproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +9,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -66,7 +60,7 @@ public class MainMenu extends AppCompatActivity {
         weeklyActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(MainMenu.this,Calendar.class);
+                Intent intent =new Intent(MainMenu.this, CalendarActivities.class);
                 startActivity(intent);
             }
         });

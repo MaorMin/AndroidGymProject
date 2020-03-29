@@ -4,33 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg_2"
     tools:context=".UpdateDetails">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:background="@drawable/register_top"
-        android:gravity="bottom"
+        android:layout_weight="2"
+        android:gravity="center"
         android:orientation="vertical">
-
-
-        <ImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="7dp"
-            android:src="@drawable/logo_transperent_bg" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
             android:text="@string/update_details"
-            android:textSize="20dp" />
+            android:textSize="30sp"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 
@@ -38,9 +30,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:layout_weight="8"
+        android:layout_weight="7"
         android:orientation="vertical">
 
 
@@ -60,7 +52,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
 
                 <Spinner
                     android:id="@+id/new_details_spinner"
@@ -68,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:drawable/btn_dropdown"
                     android:spinnerMode="dropdown"
+                android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
 

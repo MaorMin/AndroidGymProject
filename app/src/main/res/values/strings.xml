@@ -116,5 +116,15 @@
     </string-array>
     <string name="my_workouts">My Workouts</string>
     <string name="workout_name">Workout Name</string>
+    <string name="zumba_event">Zumba</string>
+    <string name="aerobic_event">aerobic</string>
+    <string name="yoga_event">yoga</string>
+    <string name="pilates_event">pilates</string>
+    <string name="sculpting_event">sculpting</string>
+    <string name="HIT_event">HIT</string>
+    <string name="workout_station_event">workout station</string>
+    <string name="kick_box_event">kick box</string>
+    <string name="TRX_event">TRX</string>
+    <string name="no_activity_event">No Activity</string>
 
 </resources>
